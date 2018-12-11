@@ -1,0 +1,1645 @@
+2018-12-09T12:50:41.940Z I dialogflowFirebaseFulfillment: Headers {
+  "host": "us-central1-xor-kitvaw.cloudfunctions.net",
+  "user-agent": "Apache-HttpClient/4.5.6 (Java/1.8.0_181)",
+  "transfer-encoding": "chunked",
+  "accept": "text/plain, */*",
+  "accept-charset": "big5, big5-hkscs, cesu-8, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai, ibm00858, ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146, ibm01147, ibm01148, ibm01149, ibm037, ibm1026, ibm1047, ibm273, ibm277, ibm278, ibm280, ibm284, ibm285, ibm290, ibm297, ibm420, ibm424, ibm437, ibm500, ibm775, ibm850, ibm852, ibm855, ibm857, ibm860, ibm861, ibm862, ibm863, ibm864, ibm865, ibm866, ibm868, ibm869, ibm870, ibm871, ibm918, iso-2022-cn, iso-2022-jp, iso-2022-jp-2, iso-2022-kr, iso-8859-1, iso-8859-13, iso-8859-15, iso-8859-2, iso-8859-3, iso-8859-4, iso-8859-5, iso-8859-6, iso-8859-7, iso-8859-8, iso-8859-9, jis_x0201, jis_x0212-1990, koi8-r, koi8-u, shift_jis, tis-620, us-ascii, utf-16, utf-16be, utf-16le, utf-32, utf-32be, utf-32le, utf-8, windows-1250, windows-1251, windows-1252, windows-1253, windows-1254, windows-1255, windows-1256, windows-1257, windows-1258, windows-31j, x-big5-hkscs-2001, x-big5-solaris, x-compound_text, x-euc-jp-linux, x-euc-tw, x-eucjp-open, x-ibm1006, x-ibm1025, x-ibm1046, x-ibm1097, x-ibm1098, x-ibm1112, x-ibm1122, x-ibm1123, x-ibm1124, x-ibm1166, x-ibm1364, x-ibm1381, x-ibm1383, x-ibm300, x-ibm33722, x-ibm737, x-ibm833, x-ibm834, x-ibm856, x-ibm874, x-ibm875, x-ibm921, x-ibm922, x-ibm930, x-ibm933, x-ibm935, x-ibm937, x-ibm939, x-ibm942, x-ibm942c, x-ibm943, x-ibm943c, x-ibm948, x-ibm949, x-ibm949c, x-ibm950, x-ibm964, x-ibm970, x-iscii91, x-iso-2022-cn-cns, x-iso-2022-cn-gb, x-iso-8859-11, x-jis0208, x-jisautodetect, x-johab, x-macarabic, x-maccentraleurope, x-maccroatian, x-maccyrillic, x-macdingbat, x-macgreek, x-machebrew, x-maciceland, x-macroman, x-macromania, x-macsymbol, x-macthai, x-macturkish, x-macukraine, x-ms932_0213, x-ms950-hkscs, x-ms950-hkscs-xp, x-mswin-936, x-pck, x-sjis_0213, x-utf-16le-bom, x-utf-32be-bom, x-utf-32le-bom, x-windows-50220, x-windows-50221, x-windows-874, x-windows-949, x-windows-950, x-windows-iso2022jp",
+  "accept-encoding": "gzip,deflate",
+  "content-type": "application/json; charset=UTF-8",
+  "function-execution-id": "8qjhiwmhh3gl",
+  "x-appengine-api-ticket": "5f83fc64722596d0",
+  "x-appengine-city": "?",
+  "x-appengine-citylatlong": "0.000000,0.000000",
+  "x-appengine-country": "US",
+  "x-appengine-default-version-hostname": "pf6628ef9484e2f53-tp.appspot.com",
+  "x-appengine-https": "on",
+  "x-appengine-region": "?",
+  "x-appengine-request-log-id": "5c0d0fa100ff096a2e8812ad0d0001737e70663636323865663934383465326635332d7470000139303866373866633530636138623435363966303164656633393333393136383a3234000100",
+  "x-appengine-user-ip": "35.225.202.145",
+  "x-cloud-trace-context": "0b226d4ee8a08ee0b202cbf44ab92dd8/8048732446131697744;o=1",
+  "x-forwarded-for": "35.225.202.145, 35.225.202.145",
+  "x-forwarded-proto": "https"
+}
+2018-12-09T12:50:41.945Z I dialogflowFirebaseFulfillment: Conversation {
+  "responses": [],
+  "expectUserResponse": true,
+  "digested": false,
+  "noInputs": [],
+  "speechBiasing": [],
+  "_responded": false,
+  "request": "[Excluded]",
+  "headers": "[Excluded]",
+  "_init": {},
+  "sandbox": true,
+  "input": {
+    "raw": "2 hours",
+    "type": "VOICE"
+  },
+  "surface": {
+    "capabilities": {
+      "list": [
+        {
+          "name": "actions.capability.WEB_BROWSER"
+        },
+        {
+          "name": "actions.capability.MEDIA_RESPONSE_AUDIO"
+        },
+        {
+          "name": "actions.capability.SCREEN_OUTPUT"
+        },
+        {
+          "name": "actions.capability.AUDIO_OUTPUT"
+        }
+      ]
+    }
+  },
+  "available": {
+    "surfaces": {
+      "list": [
+        {
+          "capabilities": {
+            "list": [
+              {
+                "name": "actions.capability.WEB_BROWSER"
+              },
+              {
+                "name": "actions.capability.SCREEN_OUTPUT"
+              },
+              {
+                "name": "actions.capability.AUDIO_OUTPUT"
+              }
+            ]
+          }
+        }
+      ],
+      "capabilities": {
+        "surfaces": [
+          {
+            "capabilities": {
+              "list": [
+                {
+                  "name": "actions.capability.WEB_BROWSER"
+                },
+                {
+                  "name": "actions.capability.SCREEN_OUTPUT"
+                },
+                {
+                  "name": "actions.capability.AUDIO_OUTPUT"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "user": {
+    "raw": {
+      "userStorage": "{\"data\":{\"pc\":\"3\",\"date\":\"\",\"duration\":{\"amount\":3,\"unit\":\"h\"},\"time\":\"2018-12-10T10:00:00+05:30\"}}",
+      "lastSeen": "2018-12-09T12:42:03Z",
+      "locale": "en-IN",
+      "userId": "ABwppHHwQ6CtNSwSKLGpiu0o6hLSMClQXOyYpcboezslTvhi0V2iQEMVqULAjbVbiv53vew7iznl7A"
+    },
+    "storage": {
+      "pc": "3",
+      "date": "",
+      "duration": {
+        "amount": 3,
+        "unit": "h"
+      },
+      "time": "2018-12-10T10:00:00+05:30"
+    },
+    "_id": "ABwppHHwQ6CtNSwSKLGpiu0o6hLSMClQXOyYpcboezslTvhi0V2iQEMVqULAjbVbiv53vew7iznl7A",
+    "locale": "en-IN",
+    "permissions": [],
+    "last": {
+      "seen": "2018-12-09T12:42:03.000Z"
+    },
+    "name": {},
+    "entitlements": [],
+    "access": {},
+    "profile": {}
+  },
+  "arguments": {
+    "parsed": {
+      "input": {
+        "text": "2 hours"
+      },
+      "list": [
+        "2 hours"
+      ]
+    },
+    "status": {
+      "input": {},
+      "list": [
+        null
+      ]
+    },
+    "raw": {
+      "list": [
+        {
+          "rawText": "2 hours",
+          "textValue": "2 hours",
+          "name": "text"
+        }
+      ],
+      "input": {
+        "text": {
+          "rawText": "2 hours",
+          "textValue": "2 hours",
+          "name": "text"
+        }
+      }
+    }
+  },
+  "device": {},
+  "id": "ABwppHHv-JMZO1oiSJulGhkKf__uvPUPoPySB-Lyb5YlOFNgSJO7B2iyC_4SPtk1BUP9qXHm5_nLxQ",
+  "type": "ACTIVE",
+  "screen": true,
+  "body": "[Excluded]",
+  "version": 2,
+  "action": "",
+  "intent": "search meeting room",
+  "parameters": {
+    "duration": {
+      "amount": 2,
+      "unit": "h"
+    },
+    "person_count": "2",
+    "time": "2018-12-10T03:00:00+05:30",
+    "date": "2018-12-09T12:00:00+05:30"
+  },
+  "contexts": {
+    "_session": "projects/xor-kitvaw/agent/sessions/ABwppHHv-JMZO1oiSJulGhkKf__uvPUPoPySB-Lyb5YlOFNgSJO7B2iyC_4SPtk1BUP9qXHm5_nLxQ",
+    "input": {
+      "searchmeetingroom-followup": {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHv-JMZO1oiSJulGhkKf__uvPUPoPySB-Lyb5YlOFNgSJO7B2iyC_4SPtk1BUP9qXHm5_nLxQ/contexts/searchmeetingroom-followup",
+        "lifespan": 2,
+        "parameters": {
+          "date": "2018-12-09T12:00:00+05:30",
+          "duration": {
+            "amount": 2,
+            "unit": "h"
+          },
+          "time.original": "3 o'clock",
+          "person_count.original": "two",
+          "date.original": "today",
+          "time": "2018-12-10T03:00:00+05:30",
+          "person_count": 2,
+          "duration.original": "2 hours"
+        }
+      },
+      "actions_capability_screen_output": {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHv-JMZO1oiSJulGhkKf__uvPUPoPySB-Lyb5YlOFNgSJO7B2iyC_4SPtk1BUP9qXHm5_nLxQ/contexts/actions_capability_screen_output",
+        "parameters": {
+          "date": "2018-12-09T12:00:00+05:30",
+          "duration": {
+            "amount": 2,
+            "unit": "h"
+          },
+          "time.original": "3 o'clock",
+          "person_count.original": "two",
+          "date.original": "today",
+          "time": "2018-12-10T03:00:00+05:30",
+          "duration.original": "2 hours",
+          "person_count": 2
+        }
+      },
+      "actions_capability_audio_output": {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHv-JMZO1oiSJulGhkKf__uvPUPoPySB-Lyb5YlOFNgSJO7B2iyC_4SPtk1BUP9qXHm5_nLxQ/contexts/actions_capability_audio_output",
+        "parameters": {
+          "date":
+2018-12-09T12:50:41.955Z I dialogflowFirebaseFulfillment: [ { name: 'Shivranjani',
+    capacity: 3,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Sahana',
+    capacity: 3,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Marva',
+    capacity: 5,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Malkauns',
+    capacity: 5,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Jogiya',
+    capacity: 5,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Hindol',
+    capacity: 5,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Hameer',
+    capacity: 5,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Deshkar',
+    capacity: 10,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Chandrakaun',
+    capacity: 10,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Bihag',
+    capacity: 30,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Bhup',
+    capacity: 50,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Bagsheri',
+    capacity: 40,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Ahiri',
+    capacity: 10,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Basant',
+    capacity: 20,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Kafi',
+    capacity: 30,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Asavari',
+    capacity: 40,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] } ]
+2018-12-09T12:50:42.044Z I dialogflowFirebaseFulfillment: Response {
+  "status": 200,
+  "headers": {
+    "content-type": "application/json;charset=utf-8"
+  },
+  "body": {
+    "payload": {
+      "google": {
+        "expectUserResponse": true,
+        "richResponse": {
+          "items": [
+            {
+              "simpleResponse": {
+                "textToSpeech": "Please select your meeting room "
+              }
+            }
+          ],
+          "suggestions": [
+            {
+              "title": "Shivranjani"
+            },
+            {
+              "title": "Sahana"
+            },
+            {
+              "title": "Marva"
+            },
+            {
+              "title": "Malkauns"
+            },
+            {
+              "title": "Jogiya"
+            },
+            {
+              "title": "Hindol"
+            },
+            {
+              "title": "Hameer"
+            },
+            {
+              "title": "Deshkar"
+            },
+            {
+              "title": "Chandrakaun"
+            },
+            {
+              "title": "Bihag"
+            },
+            {
+              "title": "Bhup"
+            },
+            {
+              "title": "Bagsheri"
+            },
+            {
+              "title": "Ahiri"
+            },
+            {
+              "title": "Basant"
+            },
+            {
+              "title": "Kafi"
+            },
+            {
+              "title": "Asavari"
+            }
+          ]
+        },
+        "userStorage": "{\"data\":{\"pc\":\"2\",\"date\":\"2018-12-09T12:00:00+05:30\",\"duration\":{\"amount\":2,\"unit\":\"h\"},\"time\":\"2018-12-10T03:00:00+05:30\"}}"
+      }
+    }
+  }
+}
+2018-12-09T12:50:42.047846807Z D dialogflowFirebaseFulfillment: Function execution took 428 ms, finished with status code: 200
+2018-12-09T12:50:46.235772393Z D dialogflowFirebaseFulfillment: Function execution started
+2018-12-09T12:50:46.235809141Z D dialogflowFirebaseFulfillment: Billing account not configured. External network is not accessible and quotas are severely limited. Configure billing account to remove these restrictions
+2018-12-09T12:50:46.240Z I dialogflowFirebaseFulfillment: Request {
+  "responseId": "db7270be-9a63-46de-be6d-14c031e363e9",
+  "queryResult": {
+    "queryText": "Shivranjani",
+    "action": "searchmeetingroom.searchmeetingroom-custom",
+    "parameters": {
+      "meeting_room": "Shivranjani"
+    },
+    "allRequiredParamsPresent": true,
+    "fulfillmentMessages": [
+      {
+        "text": {
+          "text": [
+            ""
+          ]
+        }
+      }
+    ],
+    "outputContexts": [
+      {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHv-JMZO1oiSJulGhkKf__uvPUPoPySB-Lyb5YlOFNgSJO7B2iyC_4SPtk1BUP9qXHm5_nLxQ/contexts/google_assistant_input_type_touch",
+        "parameters": {
+          "meeting_room.original": "Shivranjani",
+          "meeting_room": "Shivranjani"
+        }
+      },
+      {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHv-JMZO1oiSJulGhkKf__uvPUPoPySB-Lyb5YlOFNgSJO7B2iyC_4SPtk1BUP9qXHm5_nLxQ/contexts/searchmeetingroom-followup",
+        "lifespanCount": 1,
+        "parameters": {
+          "date": "2018-12-09T12:00:00+05:30",
+          "duration": {
+            "amount": 2,
+            "unit": "h"
+          },
+          "time.original": "3 o'clock",
+          "person_count.original": "two",
+          "date.original": "today",
+          "meeting_room.original": "Shivranjani",
+          "meeting_room": "Shivranjani",
+          "time": "2018-12-10T03:00:00+05:30",
+          "person_count": 2,
+          "duration.original": "2 hours"
+        }
+      },
+      {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHv-JMZO1oiSJulGhkKf__uvPUPoPySB-Lyb5YlOFNgSJO7B2iyC_4SPtk1BUP9qXHm5_nLxQ/contexts/actions_capability_screen_output",
+        "parameters": {
+          "meeting_room.original": "Shivranjani",
+          "meeting_room": "Shivranjani"
+        }
+      },
+      {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHv-JMZO1oiSJulGhkKf__uvPUPoPySB-Lyb5YlOFNgSJO7B2iyC_4SPtk1BUP9qXHm5_nLxQ/contexts/actions_capability_audio_output",
+        "parameters": {
+          "meeting_room.original": "Shivranjani",
+          "meeting_room": "Shivranjani"
+        }
+      },
+      {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHv-JMZO1oiSJulGhkKf__uvPUPoPySB-Lyb5YlOFNgSJO7B2iyC_4SPtk1BUP9qXHm5_nLxQ/contexts/actions_capability_web_browser",
+        "parameters": {
+          "meeting_room.original": "Shivranjani",
+          "meeting_room": "Shivranjani"
+        }
+      },
+      {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHv-JMZO1oiSJulGhkKf__uvPUPoPySB-Lyb5YlOFNgSJO7B2iyC_4SPtk1BUP9qXHm5_nLxQ/contexts/actions_capability_media_response_audio",
+        "parameters": {
+          "meeting_room.original": "Shivranjani",
+          "meeting_room": "Shivranjani"
+        }
+      }
+    ],
+    "intent": {
+      "name": "projects/xor-kitvaw/agent/intents/8586cb3f-1b0c-4bfd-92b7-b0517d18c06d",
+      "displayName": "search meeting room - book"
+    },
+    "intentDetectionConfidence": 1,
+    "languageCode": "en-in"
+  },
+  "originalDetectIntentRequest": {
+    "source": "google",
+    "version": "2",
+    "payload": {
+      "isInSandbox": true,
+      "surface": {
+        "capabilities": [
+          {
+            "name": "actions.capability.SCREEN_OUTPUT"
+          },
+          {
+            "name": "actions.capability.AUDIO_OUTPUT"
+          },
+          {
+            "name": "actions.capability.WEB_BROWSER"
+          },
+          {
+            "name": "actions.capability.MEDIA_RESPONSE_AUDIO"
+          }
+        ]
+      },
+      "inputs": [
+        {
+          "rawInputs": [
+            {
+              "query": "Shivranjani",
+              "inputType": "TOUCH"
+            }
+          ],
+          "arguments": [
+            {
+              "rawText": "Shivranjani",
+              "textValue": "Shivranjani",
+              "name": "text"
+            }
+          ],
+          "intent": "actions.intent.TEXT"
+        }
+      ],
+      "user": {
+        "userStorage": "{\"data\":{\"pc\":\"2\",\"date\":\"2018-12-09T12:00:00+05:30\",\"duration\":{\"amount\":2,\"unit\":\"h\"},\"time\":\"2018-12-10T03:00:00+05:30\"}}",
+        "lastSeen": "2018-12-09T12:42:03Z",
+        "locale": "en-IN",
+        "userId": "ABwppHHwQ6CtNSwSKLGpiu0o6hLSMClQXOyYpcboezslTvhi0V2iQEMVqULAjbVbiv53vew7iznl7A"
+      },
+      "conversation": {
+        "conversationId": "ABwppHHv-JMZO1oiSJulGhkKf__uvPUPoPySB-Lyb5YlOFNgSJO7B2iyC_4SPtk1BUP9qXHm5_nLxQ",
+        "type": "ACTIVE",
+        "conversationToken": "[\"searchmeetingroom-followup\"]"
+      },
+      "availableSurfaces": [
+        {
+          "capabilities": [
+            {
+              "name": "actions.capability.SCREEN_OUTPUT"
+            },
+            {
+              "name": "actions.capability.AUDIO_OUTPUT"
+            },
+            {
+              "name": "actions.capability.WEB_BROWSER"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "session": "projects/xor-kitvaw/agent/sessions/ABwppHHv-JMZO1oiSJulGhkKf__uvPUPoPySB-Lyb5YlOFNgSJO7B2iyC_4SPtk1BUP9qXHm5_nLxQ"
+}
+2018-12-09T12:50:46.241Z I dialogflowFirebaseFulfillment: Headers {
+  "host": "us-central1-xor-kitvaw.cloudfunctions.net",
+  "user-agent": "Apache-HttpClient/4.5.6 (Java/1.8.0_181)",
+  "transfer-encoding": "chunked",
+  "accept": "text/plain, */*",
+  "accept-charset": "big5, big5-hkscs, cesu-8, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai, ibm00858, ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146, ibm01147, ibm01148, ibm01149, ibm037, ibm1026, ibm1047, ibm273, ibm277, ibm278, ibm280, ibm284, ibm285, ibm290, ibm297, ibm420, ibm424, ibm437, ibm500, ibm775, ibm850, ibm852, ibm855, ibm857, ibm860, ibm861, ibm862, ibm863, ibm864, ibm865, ibm866, ibm868, ibm869, ibm870, ibm871, ibm918, iso-2022-cn, iso-2022-jp, iso-2022-jp-2, iso-2022-kr, iso-8859-1, iso-8859-13, iso-8859-15, iso-8859-2, iso-8859-3, iso-8859-4, iso-8859-5, iso-8859-6, iso-8859-7, iso-8859-8, iso-8859-9, jis_x0201, jis_x0212-1990, koi8-r, koi8-u, shift_jis, tis-620, us-ascii, utf-16, utf-16be, utf-16le, utf-32, utf-32be, utf-32le, utf-8, windows-1250, windows-1251, windows-1252, windows-1253, windows-1254, windows-1255, windows-1256, windows-1257, windows-1258, windows-31j, x-big5-hkscs-2001, x-big5-solaris, x-compound_text, x-euc-jp-linux, x-euc-tw, x-eucjp-open, x-ibm1006, x-ibm1025, x-ibm1046, x-ibm1097, x-ibm1098, x-ibm1112, x-ibm1122, x-ibm1123, x-ibm1124, x-ibm1166, x-ibm1364, x-ibm1381, x-ibm1383, x-ibm300, x-ibm33722, x-ibm737, x-ibm833, x-ibm834, x-ibm856, x-ibm874, x-ibm875, x-ibm921, x-ibm922, x-ibm930, x-ibm933, x-ibm935, x-ibm937, x-ibm939, x-ibm942, x-ibm942c, x-ibm943, x-ibm943c, x-ibm948, x-ibm949, x-ibm949c, x-ibm950, x-ibm964, x-ibm970, x-iscii91, x-iso-2022-cn-cns, x-iso-2022-cn-gb, x-iso-8859-11, x-jis0208, x-jisautodetect, x-johab, x-macarabic, x-maccentraleurope, x-maccroatian, x-maccyrillic, x-macdingbat, x-macgreek, x-machebrew, x-maciceland, x-macroman, x-macromania, x-macsymbol, x-macthai, x-macturkish, x-macukraine, x-ms932_0213, x-ms950-hkscs, x-ms950-hkscs-xp, x-mswin-936, x-pck, x-sjis_0213, x-utf-16le-bom, x-utf-32be-bom, x-utf-32le-bom, x-windows-50220, x-windows-50221, x-windows-874, x-windows-949, x-windows-950, x-windows-iso2022jp",
+  "accept-encoding": "gzip,deflate",
+  "content-type": "application/json; charset=UTF-8",
+  "function-execution-id": "8qjhkbmq3fkk",
+  "x-appengine-api-ticket": "0c62f5be771d20f9",
+  "x-appengine-city": "?",
+  "x-appengine-citylatlong": "0.000000,0.000000",
+  "x-appengine-country": "US",
+  "x-appengine-default-version-hostname": "pf6628ef9484e2f53-tp.appspot.com",
+  "x-appengine-https": "on",
+  "x-appengine-region": "?",
+  "x-appengine-request-log-id": "5c0d0fa600ff038be6aa31dc140001737e70663636323865663934383465326635332d7470000139303866373866633530636138623435363966303164656633393333393136383a3234000100",
+  "x-appengine-user-ip": "35.192.224.59",
+  "x-cloud-trace-context": "787bf35b972858c952082e4c1082ee8b/43175175373563291",
+  "x-forwarded-for": "35.192.224.59, 35.192.224.59",
+  "x-forwarded-proto": "https"
+}
+2018-12-09T12:50:46.244Z I dialogflowFirebaseFulfillment: Conversation {
+  "responses": [],
+  "expectUserResponse": true,
+  "digested": false,
+  "noInputs": [],
+  "speechBiasing": [],
+  "_responded": false,
+  "request": "[Excluded]",
+  "headers": "[Excluded]",
+  "_init": {},
+  "sandbox": true,
+  "input": {
+    "raw": "Shivranjani",
+    "type": "TOUCH"
+  },
+  "surface": {
+    "capabilities": {
+      "list": [
+        {
+          "name": "actions.capability.SCREEN_OUTPUT"
+        },
+        {
+          "name": "actions.capability.AUDIO_OUTPUT"
+        },
+        {
+          "name": "actions.capability.WEB_BROWSER"
+        },
+        {
+          "name": "actions.capability.MEDIA_RESPONSE_AUDIO"
+        }
+      ]
+    }
+  },
+  "available": {
+    "surfaces": {
+      "list": [
+        {
+          "capabilities": {
+            "list": [
+              {
+                "name": "actions.capability.SCREEN_OUTPUT"
+              },
+              {
+                "name": "actions.capability.AUDIO_OUTPUT"
+              },
+              {
+                "name": "actions.capability.WEB_BROWSER"
+              }
+            ]
+          }
+        }
+      ],
+      "capabilities": {
+        "surfaces": [
+          {
+            "capabilities": {
+              "list": [
+                {
+                  "name": "actions.capability.SCREEN_OUTPUT"
+                },
+                {
+                  "name": "actions.capability.AUDIO_OUTPUT"
+                },
+                {
+                  "name": "actions.capability.WEB_BROWSER"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "user": {
+    "raw": {
+      "userStorage": "{\"data\":{\"pc\":\"2\",\"date\":\"2018-12-09T12:00:00+05:30\",\"duration\":{\"amount\":2,\"unit\":\"h\"},\"time\":\"2018-12-10T03:00:00+05:30\"}}",
+      "lastSeen": "2018-12-09T12:42:03Z",
+      "locale": "en-IN",
+      "userId": "ABwppHHwQ6CtNSwSKLGpiu0o6hLSMClQXOyYpcboezslTvhi0V2iQEMVqULAjbVbiv53vew7iznl7A"
+    },
+    "storage": {
+      "pc": "2",
+      "date": "2018-12-09T12:00:00+05:30",
+      "duration": {
+        "amount": 2,
+        "unit": "h"
+      },
+      "time": "2018-12-10T03:00:00+05:30"
+    },
+    "_id": "ABwppHHwQ6CtNSwSKLGpiu0o6hLSMClQXOyYpcboezslTvhi0V2iQEMVqULAjbVbiv53vew7iznl7A",
+    "locale": "en-IN",
+    "permissions": [],
+    "last": {
+      "seen": "2018-12-09T12:42:03.000Z"
+    },
+    "name": {},
+    "entitlements": [],
+    "access": {},
+    "profile": {}
+  },
+  "arguments": {
+    "parsed": {
+      "input": {
+        "text": "Shivranjani"
+      },
+      "list": [
+        "Shivranjani"
+      ]
+    },
+    "status": {
+      "input": {},
+      "list": [
+        null
+      ]
+    },
+    "raw": {
+      "list": [
+        {
+          "rawText": "Shivranjani",
+          "textValue": "Shivranjani",
+          "name": "text"
+        }
+      ],
+      "input": {
+        "text": {
+          "rawText": "Shivranjani",
+          "textValue": "Shivranjani",
+          "name": "text"
+        }
+      }
+    }
+  },
+  "device": {},
+  "id": "ABwppHHv-JMZO1oiSJulGhkKf__uvPUPoPySB-Lyb5YlOFNgSJO7B2iyC_4SPtk1BUP9qXHm5_nLxQ",
+  "type": "ACTIVE",
+  "screen": true,
+  "body": "[Excluded]",
+  "version": 2,
+  "action": "searchmeetingroom.searchmeetingroom-custom",
+  "intent": "search meeting room - book",
+  "parameters": {
+    "meeting_room": "Shivranjani"
+  },
+  "contexts": {
+    "_session": "projects/xor-kitvaw/agent/sessions/ABwppHHv-JMZO1oiSJulGhkKf__uvPUPoPySB-Lyb5YlOFNgSJO7B2iyC_4SPtk1BUP9qXHm5_nLxQ",
+    "input": {
+      "google_assistant_input_type_touch": {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHv-JMZO1oiSJulGhkKf__uvPUPoPySB-Lyb5YlOFNgSJO7B2iyC_4SPtk1BUP9qXHm5_nLxQ/contexts/google_assistant_input_type_touch",
+        "parameters": {
+          "meeting_room.original": "Shivranjani",
+          "meeting_room": "Shivranjani"
+        }
+      },
+      "searchmeetingroom-followup": {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHv-JMZO1oiSJulGhkKf__uvPUPoPySB-Lyb5YlOFNgSJO7B2iyC_4SPtk1BUP9qXHm5_nLxQ/contexts/searchmeetingroom-followup",
+        "lifespan": 1,
+        "parameters": {
+          "date": "2018-12-09T12:00:00+05:30",
+          "duration": {
+            "amount": 2,
+            "unit": "h"
+          },
+          "time.original": "3 o'clock",
+          "person_count.original": "two",
+          "date.original": "today",
+          "meeting_room.original": "Shivranjani",
+          "meeting_room": "Shivranjani",
+          "time": "2018-12-10T03:00:00+05:30",
+          "person_count": 2,
+          "duration.original": "2 hours"
+        }
+      },
+      "actions_capability_screen_output": {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHv-JMZO1oiSJulGhkKf__uvPUPoPySB-Lyb5YlOFNgSJO7B2iyC_4SPtk1BUP9qXHm5_nLxQ/contexts/actions_capability_screen_output",
+        "parameters": {
+          "meeting_room.original": "Shivranjani",
+          "meeting_room": "Shivranjani"
+        }
+      },
+      "actions_capability_audio_output": {
+        "name": "projects/xor-kitvaw/agent/sessions/ABw
+2018-12-09T12:50:46.248Z E dialogflowFirebaseFulfillment: TypeError: Cannot read property 'time' of undefined
+    at exports.bookMeetingRoom (/user_code/meeting_room/meetingRoomController.js:27:21)
+    at app.intent (/user_code/index.js:33:5)
+    at Function.<anonymous> (/user_code/node_modules/actions-on-google/dist/service/dialogflow/dialogflow.js:149:23)
+    at next (native)
+    at /user_code/node_modules/actions-on-google/dist/service/dialogflow/dialogflow.js:22:71
+    at __awaiter (/user_code/node_modules/actions-on-google/dist/service/dialogflow/dialogflow.js:18:12)
+    at Function.handler (/user_code/node_modules/actions-on-google/dist/service/dialogflow/dialogflow.js:84:16)
+    at Object.<anonymous> (/user_code/node_modules/actions-on-google/dist/assistant.js:55:32)
+    at next (native)
+    at /user_code/node_modules/actions-on-google/dist/assistant.js:22:71
+2018-12-09T12:50:46.336277767Z D dialogflowFirebaseFulfillment: Function execution took 102 ms, finished with status code: 500
+2018-12-09T12:51:58.152Z I : undefined
+2018-12-09T12:52:00.294Z N dialogflowFirebaseFulfillment: undefined
+2018-12-09T12:52:36.706Z I dialogflowFirebaseFulfillment: [ { name: 'Shivranjani',
+    capacity: 3,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Sahana',
+    capacity: 3,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Marva',
+    capacity: 5,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Malkauns',
+    capacity: 5,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Jogiya',
+    capacity: 5,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Hindol',
+    capacity: 5,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Hameer',
+    capacity: 5,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Deshkar',
+    capacity: 10,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Chandrakaun',
+    capacity: 10,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Bihag',
+    capacity: 30,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Bhup',
+    capacity: 50,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Bagsheri',
+    capacity: 40,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Ahiri',
+    capacity: 10,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Basant',
+    capacity: 20,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Kafi',
+    capacity: 30,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Asavari',
+    capacity: 40,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] } ]
+2018-12-09T12:52:38.838Z N dialogflowFirebaseFulfillment: undefined
+2018-12-09T12:53:11.093Z I : undefined
+2018-12-09T12:53:13.229Z N dialogflowFirebaseFulfillment: undefined
+2018-12-09T12:53:49.449Z I dialogflowFirebaseFulfillment: [ { name: 'Shivranjani',
+    capacity: 3,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Sahana',
+    capacity: 3,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Marva',
+    capacity: 5,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Malkauns',
+    capacity: 5,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Jogiya',
+    capacity: 5,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Hindol',
+    capacity: 5,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Hameer',
+    capacity: 5,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Deshkar',
+    capacity: 10,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Chandrakaun',
+    capacity: 10,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Bihag',
+    capacity: 30,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Bhup',
+    capacity: 50,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Bagsheri',
+    capacity: 40,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Ahiri',
+    capacity: 10,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Basant',
+    capacity: 20,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Kafi',
+    capacity: 30,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Asavari',
+    capacity: 40,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] } ]
+2018-12-09T12:53:52.029Z N dialogflowFirebaseFulfillment: undefined
+2018-12-09T12:54:42.593335059Z D dialogflowFirebaseFulfillment: Function execution started
+2018-12-09T12:54:42.593379186Z D dialogflowFirebaseFulfillment: Billing account not configured. External network is not accessible and quotas are severely limited. Configure billing account to remove these restrictions
+2018-12-09T12:54:42.903Z I dialogflowFirebaseFulfillment: Request {
+  "responseId": "aaa0aa72-51c9-4a07-8974-e851db2552a6",
+  "queryResult": {
+    "queryText": "book a meeting room for 4 people at 10 o'clock for 2 hours",
+    "parameters": {
+      "person_count": 4,
+      "time": "2018-12-10T10:00:00+05:30",
+      "duration": {
+        "amount": 2,
+        "unit": "h"
+      },
+      "date": ""
+    },
+    "allRequiredParamsPresent": true,
+    "fulfillmentText": "Done, your meeting room has been booked.",
+    "fulfillmentMessages": [
+      {
+        "text": {
+          "text": [
+            "Done, your meeting room has been booked."
+          ]
+        }
+      }
+    ],
+    "outputContexts": [
+      {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA/contexts/searchmeetingroom-followup",
+        "lifespanCount": 2,
+        "parameters": {
+          "date": "",
+          "duration": {
+            "amount": 2,
+            "unit": "h"
+          },
+          "time.original": "at 10 o'clock",
+          "person_count.original": "4",
+          "date.original": "",
+          "time": "2018-12-10T10:00:00+05:30",
+          "duration.original": "2 hours",
+          "person_count": 4
+        }
+      },
+      {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA/contexts/actions_capability_screen_output",
+        "parameters": {
+          "date": "",
+          "duration": {
+            "amount": 2,
+            "unit": "h"
+          },
+          "time.original": "at 10 o'clock",
+          "person_count.original": "4",
+          "date.original": "",
+          "time": "2018-12-10T10:00:00+05:30",
+          "duration.original": "2 hours",
+          "person_count": 4
+        }
+      },
+      {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA/contexts/actions_capability_audio_output",
+        "parameters": {
+          "date": "",
+          "duration": {
+            "amount": 2,
+            "unit": "h"
+          },
+          "time.original": "at 10 o'clock",
+          "person_count.original": "4",
+          "date.original": "",
+          "time": "2018-12-10T10:00:00+05:30",
+          "duration.original": "2 hours",
+          "person_count": 4
+        }
+      },
+      {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA/contexts/google_assistant_input_type_voice",
+        "parameters": {
+          "date": "",
+          "duration": {
+            "amount": 2,
+            "unit": "h"
+          },
+          "time.original": "at 10 o'clock",
+          "person_count.original": "4",
+          "date.original": "",
+          "time": "2018-12-10T10:00:00+05:30",
+          "duration.original": "2 hours",
+          "person_count": 4
+        }
+      },
+      {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA/contexts/actions_capability_media_response_audio",
+        "parameters": {
+          "date": "",
+          "duration": {
+            "amount": 2,
+            "unit": "h"
+          },
+          "time.original": "at 10 o'clock",
+          "person_count.original": "4",
+          "date.original": "",
+          "time": "2018-12-10T10:00:00+05:30",
+          "duration.original": "2 hours",
+          "person_count": 4
+        }
+      },
+      {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA/contexts/actions_capability_web_browser",
+        "parameters": {
+          "date": "",
+          "duration": {
+            "amount": 2,
+            "unit": "h"
+          },
+          "time.original": "at 10 o'clock",
+          "person_count.original": "4",
+          "date.original": "",
+          "time": "2018-12-10T10:00:00+05:30",
+          "duration.original": "2 hours",
+          "person_count": 4
+        }
+      }
+    ],
+    "intent": {
+      "name": "projects/xor-kitvaw/agent/intents/253d20d5-151d-4911-afbd-4f0f3fc51f4e",
+      "displayName": "search meeting room"
+    },
+    "intentDetectionConfidence": 0.83,
+    "languageCode": "en-in"
+  },
+  "originalDetectIntentRequest": {
+    "source": "google",
+    "version": "2",
+    "payload": {
+      "isInSandbox": true,
+      "surface": {
+        "capabilities": [
+          {
+            "name": "actions.capability.WEB_BROWSER"
+          },
+          {
+            "name": "actions.capability.AUDIO_OUTPUT"
+          },
+          {
+            "name": "actions.capability.SCREEN_OUTPUT"
+          },
+          {
+            "name": "actions.capability.MEDIA_RESPONSE_AUDIO"
+          }
+        ]
+      },
+      "inputs": [
+        {
+          "rawInputs": [
+            {
+              "query": "book a meeting room for 4 people at 10 o'clock for 2 hours",
+              "inputType": "VOICE"
+      
+2018-12-09T12:54:42.905Z I dialogflowFirebaseFulfillment: Headers {
+  "host": "us-central1-xor-kitvaw.cloudfunctions.net",
+  "user-agent": "Apache-HttpClient/4.5.6 (Java/1.8.0_181)",
+  "transfer-encoding": "chunked",
+  "accept": "text/plain, */*",
+  "accept-charset": "big5, big5-hkscs, cesu-8, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai, ibm00858, ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146, ibm01147, ibm01148, ibm01149, ibm037, ibm1026, ibm1047, ibm273, ibm277, ibm278, ibm280, ibm284, ibm285, ibm290, ibm297, ibm420, ibm424, ibm437, ibm500, ibm775, ibm850, ibm852, ibm855, ibm857, ibm860, ibm861, ibm862, ibm863, ibm864, ibm865, ibm866, ibm868, ibm869, ibm870, ibm871, ibm918, iso-2022-cn, iso-2022-jp, iso-2022-jp-2, iso-2022-kr, iso-8859-1, iso-8859-13, iso-8859-15, iso-8859-2, iso-8859-3, iso-8859-4, iso-8859-5, iso-8859-6, iso-8859-7, iso-8859-8, iso-8859-9, jis_x0201, jis_x0212-1990, koi8-r, koi8-u, shift_jis, tis-620, us-ascii, utf-16, utf-16be, utf-16le, utf-32, utf-32be, utf-32le, utf-8, windows-1250, windows-1251, windows-1252, windows-1253, windows-1254, windows-1255, windows-1256, windows-1257, windows-1258, windows-31j, x-big5-hkscs-2001, x-big5-solaris, x-compound_text, x-euc-jp-linux, x-euc-tw, x-eucjp-open, x-ibm1006, x-ibm1025, x-ibm1046, x-ibm1097, x-ibm1098, x-ibm1112, x-ibm1122, x-ibm1123, x-ibm1124, x-ibm1166, x-ibm1364, x-ibm1381, x-ibm1383, x-ibm300, x-ibm33722, x-ibm737, x-ibm833, x-ibm834, x-ibm856, x-ibm874, x-ibm875, x-ibm921, x-ibm922, x-ibm930, x-ibm933, x-ibm935, x-ibm937, x-ibm939, x-ibm942, x-ibm942c, x-ibm943, x-ibm943c, x-ibm948, x-ibm949, x-ibm949c, x-ibm950, x-ibm964, x-ibm970, x-iscii91, x-iso-2022-cn-cns, x-iso-2022-cn-gb, x-iso-8859-11, x-jis0208, x-jisautodetect, x-johab, x-macarabic, x-maccentraleurope, x-maccroatian, x-maccyrillic, x-macdingbat, x-macgreek, x-machebrew, x-maciceland, x-macroman, x-macromania, x-macsymbol, x-macthai, x-macturkish, x-macukraine, x-ms932_0213, x-ms950-hkscs, x-ms950-hkscs-xp, x-mswin-936, x-pck, x-sjis_0213, x-utf-16le-bom, x-utf-32be-bom, x-utf-32le-bom, x-windows-50220, x-windows-50221, x-windows-874, x-windows-949, x-windows-950, x-windows-iso2022jp",
+  "accept-encoding": "gzip,deflate",
+  "content-type": "application/json; charset=UTF-8",
+  "function-execution-id": "snad2d46jz00",
+  "x-appengine-api-ticket": "943b329cf74557c3",
+  "x-appengine-city": "?",
+  "x-appengine-citylatlong": "0.000000,0.000000",
+  "x-appengine-country": "US",
+  "x-appengine-default-version-hostname": "pf6628ef9484e2f53-tp.appspot.com",
+  "x-appengine-https": "on",
+  "x-appengine-region": "?",
+  "x-appengine-request-log-id": "5c0d109200ff090203b4ea2ffe0001737e70663636323865663934383465326635332d7470000139303866373866633530636138623435363966303164656633393333393136383a3236000100",
+  "x-appengine-user-ip": "35.192.224.59",
+  "x-cloud-trace-context": "94705b68e275ecb17f04c34c2a17009c/9589047615699591514;o=1",
+  "x-forwarded-for": "35.192.224.59, 35.192.224.59",
+  "x-forwarded-proto": "https"
+}
+2018-12-09T12:54:42.989Z I dialogflowFirebaseFulfillment: Conversation {
+  "responses": [],
+  "expectUserResponse": true,
+  "digested": false,
+  "noInputs": [],
+  "speechBiasing": [],
+  "_responded": false,
+  "request": "[Excluded]",
+  "headers": "[Excluded]",
+  "_init": {},
+  "sandbox": true,
+  "input": {
+    "raw": "book a meeting room for 4 people at 10 o'clock for 2 hours",
+    "type": "VOICE"
+  },
+  "surface": {
+    "capabilities": {
+      "list": [
+        {
+          "name": "actions.capability.WEB_BROWSER"
+        },
+        {
+          "name": "actions.capability.AUDIO_OUTPUT"
+        },
+        {
+          "name": "actions.capability.SCREEN_OUTPUT"
+        },
+        {
+          "name": "actions.capability.MEDIA_RESPONSE_AUDIO"
+        }
+      ]
+    }
+  },
+  "available": {
+    "surfaces": {
+      "list": [
+        {
+          "capabilities": {
+            "list": [
+              {
+                "name": "actions.capability.WEB_BROWSER"
+              },
+              {
+                "name": "actions.capability.AUDIO_OUTPUT"
+              },
+              {
+                "name": "actions.capability.SCREEN_OUTPUT"
+              }
+            ]
+          }
+        }
+      ],
+      "capabilities": {
+        "surfaces": [
+          {
+            "capabilities": {
+              "list": [
+                {
+                  "name": "actions.capability.WEB_BROWSER"
+                },
+                {
+                  "name": "actions.capability.AUDIO_OUTPUT"
+                },
+                {
+                  "name": "actions.capability.SCREEN_OUTPUT"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "user": {
+    "raw": {
+      "userStorage": "{\"data\":{\"pc\":\"2\",\"date\":\"2018-12-09T12:00:00+05:30\",\"duration\":{\"amount\":2,\"unit\":\"h\"},\"time\":\"2018-12-10T03:00:00+05:30\"}}",
+      "lastSeen": "2018-12-09T12:50:46Z",
+      "locale": "en-IN",
+      "userId": "ABwppHHwQ6CtNSwSKLGpiu0o6hLSMClQXOyYpcboezslTvhi0V2iQEMVqULAjbVbiv53vew7iznl7A"
+    },
+    "storage": {
+      "pc": "2",
+      "date": "2018-12-09T12:00:00+05:30",
+      "duration": {
+        "amount": 2,
+        "unit": "h"
+      },
+      "time": "2018-12-10T03:00:00+05:30"
+    },
+    "_id": "ABwppHHwQ6CtNSwSKLGpiu0o6hLSMClQXOyYpcboezslTvhi0V2iQEMVqULAjbVbiv53vew7iznl7A",
+    "locale": "en-IN",
+    "permissions": [],
+    "last": {
+      "seen": "2018-12-09T12:50:46.000Z"
+    },
+    "name": {},
+    "entitlements": [],
+    "access": {},
+    "profile": {}
+  },
+  "arguments": {
+    "parsed": {
+      "input": {
+        "text": "book a meeting room for 4 people at 10 o'clock for 2 hours"
+      },
+      "list": [
+        "book a meeting room for 4 people at 10 o'clock for 2 hours"
+      ]
+    },
+    "status": {
+      "input": {},
+      "list": [
+        null
+      ]
+    },
+    "raw": {
+      "list": [
+        {
+          "rawText": "book a meeting room for 4 people at 10 o'clock for 2 hours",
+          "textValue": "book a meeting room for 4 people at 10 o'clock for 2 hours",
+          "name": "text"
+        }
+      ],
+      "input": {
+        "text": {
+          "rawText": "book a meeting room for 4 people at 10 o'clock for 2 hours",
+          "textValue": "book a meeting room for 4 people at 10 o'clock for 2 hours",
+          "name": "text"
+        }
+      }
+    }
+  },
+  "device": {},
+  "id": "ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA",
+  "type": "ACTIVE",
+  "screen": true,
+  "body": "[Excluded]",
+  "version": 2,
+  "action": "",
+  "intent": "search meeting room",
+  "parameters": {
+    "person_count": "4",
+    "time": "2018-12-10T10:00:00+05:30",
+    "duration": {
+      "amount": 2,
+      "unit": "h"
+    },
+    "date": ""
+  },
+  "contexts": {
+    "_session": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA",
+    "input": {
+      "searchmeetingroom-followup": {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA/contexts/searchmeetingroom-followup",
+        "lifespan": 2,
+        "parameters": {
+          "date": "",
+          "duration": {
+            "amount": 2,
+            "unit": "h"
+          },
+          "time.original": "at 10 o'clock",
+          "person_count.original": "4",
+          "date.original": "",
+          "time": "2018-12-10T10:00:00+05:30",
+          "duration.original": "2 hours",
+          "person_count": 4
+        }
+      },
+      "actions_capability_screen_output": {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA/contexts/actions_capability_screen_output",
+        "parameters": {
+          "date": "",
+          "duration": {
+            "amount": 2,
+            "unit": "h"
+          },
+          "time.original": "at 10 o'clock",
+          "person_count.original": "4",
+          "date.original": "",
+          "time": "2018-12-10T10:00:00+05:30",
+          "duration.o
+2018-12-09T12:54:42.992Z I dialogflowFirebaseFulfillment: [ { name: 'Marva',
+    capacity: 5,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Malkauns',
+    capacity: 5,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Jogiya',
+    capacity: 5,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Hindol',
+    capacity: 5,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Hameer',
+    capacity: 5,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Deshkar',
+    capacity: 10,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Chandrakaun',
+    capacity: 10,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Bihag',
+    capacity: 30,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Bhup',
+    capacity: 50,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Bagsheri',
+    capacity: 40,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Ahiri',
+    capacity: 10,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Basant',
+    capacity: 20,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Kafi',
+    capacity: 30,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] },
+  { name: 'Asavari',
+    capacity: 40,
+    time: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ] } ]
+2018-12-09T12:54:42.997Z I dialogflowFirebaseFulfillment: Response {
+  "status": 200,
+  "headers": {
+    "content-type": "application/json;charset=utf-8"
+  },
+  "body": {
+    "payload": {
+      "google": {
+        "expectUserResponse": true,
+        "richResponse": {
+          "items": [
+            {
+              "simpleResponse": {
+                "textToSpeech": "Please select your meeting room "
+              }
+            }
+          ],
+          "suggestions": [
+            {
+              "title": "Marva"
+            },
+            {
+              "title": "Malkauns"
+            },
+            {
+              "title": "Jogiya"
+            },
+            {
+              "title": "Hindol"
+            },
+            {
+              "title": "Hameer"
+            },
+            {
+              "title": "Deshkar"
+            },
+            {
+              "title": "Chandrakaun"
+            },
+            {
+              "title": "Bihag"
+            },
+            {
+              "title": "Bhup"
+            },
+            {
+              "title": "Bagsheri"
+            },
+            {
+              "title": "Ahiri"
+            },
+            {
+              "title": "Basant"
+            },
+            {
+              "title": "Kafi"
+            },
+            {
+              "title": "Asavari"
+            }
+          ]
+        },
+        "userStorage": "{\"data\":{\"pc\":\"4\",\"date\":\"\",\"duration\":2,\"time\":\"2018-12-10T10:00:00+05:30\"}}"
+      }
+    }
+  }
+}
+2018-12-09T12:54:42.999140709Z D dialogflowFirebaseFulfillment: Function execution took 407 ms, finished with status code: 200
+2018-12-09T12:54:46.458505765Z D dialogflowFirebaseFulfillment: Function execution started
+2018-12-09T12:54:46.458565625Z D dialogflowFirebaseFulfillment: Billing account not configured. External network is not accessible and quotas are severely limited. Configure billing account to remove these restrictions
+2018-12-09T12:54:46.464Z I dialogflowFirebaseFulfillment: Request {
+  "responseId": "9240e710-f8f3-4aba-8ab8-51e33c5fdb89",
+  "queryResult": {
+    "queryText": "Marva",
+    "action": "searchmeetingroom.searchmeetingroom-custom",
+    "parameters": {
+      "meeting_room": "Marva"
+    },
+    "allRequiredParamsPresent": true,
+    "fulfillmentMessages": [
+      {
+        "text": {
+          "text": [
+            ""
+          ]
+        }
+      }
+    ],
+    "outputContexts": [
+      {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA/contexts/google_assistant_input_type_touch",
+        "parameters": {
+          "meeting_room.original": "Marva",
+          "meeting_room": "Marva"
+        }
+      },
+      {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA/contexts/searchmeetingroom-followup",
+        "lifespanCount": 1,
+        "parameters": {
+          "date": "",
+          "duration": {
+            "amount": 2,
+            "unit": "h"
+          },
+          "time.original": "at 10 o'clock",
+          "person_count.original": "4",
+          "date.original": "",
+          "meeting_room.original": "Marva",
+          "meeting_room": "Marva",
+          "time": "2018-12-10T10:00:00+05:30",
+          "duration.original": "2 hours",
+          "person_count": 4
+        }
+      },
+      {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA/contexts/actions_capability_screen_output",
+        "parameters": {
+          "meeting_room.original": "Marva",
+          "meeting_room": "Marva"
+        }
+      },
+      {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA/contexts/actions_capability_audio_output",
+        "parameters": {
+          "meeting_room.original": "Marva",
+          "meeting_room": "Marva"
+        }
+      },
+      {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA/contexts/actions_capability_media_response_audio",
+        "parameters": {
+          "meeting_room.original": "Marva",
+          "meeting_room": "Marva"
+        }
+      },
+      {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA/contexts/actions_capability_web_browser",
+        "parameters": {
+          "meeting_room.original": "Marva",
+          "meeting_room": "Marva"
+        }
+      }
+    ],
+    "intent": {
+      "name": "projects/xor-kitvaw/agent/intents/8586cb3f-1b0c-4bfd-92b7-b0517d18c06d",
+      "displayName": "search meeting room - book"
+    },
+    "intentDetectionConfidence": 1,
+    "languageCode": "en-in"
+  },
+  "originalDetectIntentRequest": {
+    "source": "google",
+    "version": "2",
+    "payload": {
+      "isInSandbox": true,
+      "surface": {
+        "capabilities": [
+          {
+            "name": "actions.capability.SCREEN_OUTPUT"
+          },
+          {
+            "name": "actions.capability.AUDIO_OUTPUT"
+          },
+          {
+            "name": "actions.capability.WEB_BROWSER"
+          },
+          {
+            "name": "actions.capability.MEDIA_RESPONSE_AUDIO"
+          }
+        ]
+      },
+      "inputs": [
+        {
+          "rawInputs": [
+            {
+              "query": "Marva",
+              "inputType": "TOUCH"
+            }
+          ],
+          "arguments": [
+            {
+              "rawText": "Marva",
+              "textValue": "Marva",
+              "name": "text"
+            }
+          ],
+          "intent": "actions.intent.TEXT"
+        }
+      ],
+      "user": {
+        "userStorage": "{\"data\":{\"pc\":\"4\",\"date\":\"\",\"duration\":2,\"time\":\"2018-12-10T10:00:00+05:30\"}}",
+        "lastSeen": "2018-12-09T12:50:46Z",
+        "locale": "en-IN",
+        "userId": "ABwppHHwQ6CtNSwSKLGpiu0o6hLSMClQXOyYpcboezslTvhi0V2iQEMVqULAjbVbiv53vew7iznl7A"
+      },
+      "conversation": {
+        "conversationId": "ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA",
+        "type": "ACTIVE",
+        "conversationToken": "[\"searchmeetingroom-followup\"]"
+      },
+      "availableSurfaces": [
+        {
+          "capabilities": [
+            {
+              "name": "actions.capability.SCREEN_OUTPUT"
+            },
+            {
+              "name": "actions.capability.AUDIO_OUTPUT"
+            },
+            {
+              "name": "actions.capability.WEB_BROWSER"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "session": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA"
+}
+2018-12-09T12:54:46.465Z I dialogflowFirebaseFulfillment: Headers {
+  "host": "us-central1-xor-kitvaw.cloudfunctions.net",
+  "user-agent": "Apache-HttpClient/4.5.6 (Java/1.8.0_181)",
+  "transfer-encoding": "chunked",
+  "accept": "text/plain, */*",
+  "accept-charset": "big5, big5-hkscs, cesu-8, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai, ibm00858, ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146, ibm01147, ibm01148, ibm01149, ibm037, ibm1026, ibm1047, ibm273, ibm277, ibm278, ibm280, ibm284, ibm285, ibm290, ibm297, ibm420, ibm424, ibm437, ibm500, ibm775, ibm850, ibm852, ibm855, ibm857, ibm860, ibm861, ibm862, ibm863, ibm864, ibm865, ibm866, ibm868, ibm869, ibm870, ibm871, ibm918, iso-2022-cn, iso-2022-jp, iso-2022-jp-2, iso-2022-kr, iso-8859-1, iso-8859-13, iso-8859-15, iso-8859-2, iso-8859-3, iso-8859-4, iso-8859-5, iso-8859-6, iso-8859-7, iso-8859-8, iso-8859-9, jis_x0201, jis_x0212-1990, koi8-r, koi8-u, shift_jis, tis-620, us-ascii, utf-16, utf-16be, utf-16le, utf-32, utf-32be, utf-32le, utf-8, windows-1250, windows-1251, windows-1252, windows-1253, windows-1254, windows-1255, windows-1256, windows-1257, windows-1258, windows-31j, x-big5-hkscs-2001, x-big5-solaris, x-compound_text, x-euc-jp-linux, x-euc-tw, x-eucjp-open, x-ibm1006, x-ibm1025, x-ibm1046, x-ibm1097, x-ibm1098, x-ibm1112, x-ibm1122, x-ibm1123, x-ibm1124, x-ibm1166, x-ibm1364, x-ibm1381, x-ibm1383, x-ibm300, x-ibm33722, x-ibm737, x-ibm833, x-ibm834, x-ibm856, x-ibm874, x-ibm875, x-ibm921, x-ibm922, x-ibm930, x-ibm933, x-ibm935, x-ibm937, x-ibm939, x-ibm942, x-ibm942c, x-ibm943, x-ibm943c, x-ibm948, x-ibm949, x-ibm949c, x-ibm950, x-ibm964, x-ibm970, x-iscii91, x-iso-2022-cn-cns, x-iso-2022-cn-gb, x-iso-8859-11, x-jis0208, x-jisautodetect, x-johab, x-macarabic, x-maccentraleurope, x-maccroatian, x-maccyrillic, x-macdingbat, x-macgreek, x-machebrew, x-maciceland, x-macroman, x-macromania, x-macsymbol, x-macthai, x-macturkish, x-macukraine, x-ms932_0213, x-ms950-hkscs, x-ms950-hkscs-xp, x-mswin-936, x-pck, x-sjis_0213, x-utf-16le-bom, x-utf-32be-bom, x-utf-32le-bom, x-windows-50220, x-windows-50221, x-windows-874, x-windows-949, x-windows-950, x-windows-iso2022jp",
+  "accept-encoding": "gzip,deflate",
+  "content-type": "application/json; charset=UTF-8",
+  "function-execution-id": "snadv587zmcb",
+  "x-appengine-api-ticket": "969a1082f35be073",
+  "x-appengine-city": "?",
+  "x-appengine-citylatlong": "0.000000,0.000000",
+  "x-appengine-country": "US",
+  "x-appengine-default-version-hostname": "pf6628ef9484e2f53-tp.appspot.com",
+  "x-appengine-https": "on",
+  "x-appengine-region": "?",
+  "x-appengine-request-log-id": "5c0d109600ff06f3bcd954a5400001737e70663636323865663934383465326635332d7470000139303866373866633530636138623435363966303164656633393333393136383a3236000100",
+  "x-appengine-user-ip": "35.192.224.59",
+  "x-cloud-trace-context": "10d359be741315f7c204a5d80b9f76b0/12688007574272887364",
+  "x-forwarded-for": "35.192.224.59, 35.192.224.59",
+  "x-forwarded-proto": "https"
+}
+2018-12-09T12:54:46.467Z I dialogflowFirebaseFulfillment: Conversation {
+  "responses": [],
+  "expectUserResponse": true,
+  "digested": false,
+  "noInputs": [],
+  "speechBiasing": [],
+  "_responded": false,
+  "request": "[Excluded]",
+  "headers": "[Excluded]",
+  "_init": {},
+  "sandbox": true,
+  "input": {
+    "raw": "Marva",
+    "type": "TOUCH"
+  },
+  "surface": {
+    "capabilities": {
+      "list": [
+        {
+          "name": "actions.capability.SCREEN_OUTPUT"
+        },
+        {
+          "name": "actions.capability.AUDIO_OUTPUT"
+        },
+        {
+          "name": "actions.capability.WEB_BROWSER"
+        },
+        {
+          "name": "actions.capability.MEDIA_RESPONSE_AUDIO"
+        }
+      ]
+    }
+  },
+  "available": {
+    "surfaces": {
+      "list": [
+        {
+          "capabilities": {
+            "list": [
+              {
+                "name": "actions.capability.SCREEN_OUTPUT"
+              },
+              {
+                "name": "actions.capability.AUDIO_OUTPUT"
+              },
+              {
+                "name": "actions.capability.WEB_BROWSER"
+              }
+            ]
+          }
+        }
+      ],
+      "capabilities": {
+        "surfaces": [
+          {
+            "capabilities": {
+              "list": [
+                {
+                  "name": "actions.capability.SCREEN_OUTPUT"
+                },
+                {
+                  "name": "actions.capability.AUDIO_OUTPUT"
+                },
+                {
+                  "name": "actions.capability.WEB_BROWSER"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "user": {
+    "raw": {
+      "userStorage": "{\"data\":{\"pc\":\"4\",\"date\":\"\",\"duration\":2,\"time\":\"2018-12-10T10:00:00+05:30\"}}",
+      "lastSeen": "2018-12-09T12:50:46Z",
+      "locale": "en-IN",
+      "userId": "ABwppHHwQ6CtNSwSKLGpiu0o6hLSMClQXOyYpcboezslTvhi0V2iQEMVqULAjbVbiv53vew7iznl7A"
+    },
+    "storage": {
+      "pc": "4",
+      "date": "",
+      "duration": 2,
+      "time": "2018-12-10T10:00:00+05:30"
+    },
+    "_id": "ABwppHHwQ6CtNSwSKLGpiu0o6hLSMClQXOyYpcboezslTvhi0V2iQEMVqULAjbVbiv53vew7iznl7A",
+    "locale": "en-IN",
+    "permissions": [],
+    "last": {
+      "seen": "2018-12-09T12:50:46.000Z"
+    },
+    "name": {},
+    "entitlements": [],
+    "access": {},
+    "profile": {}
+  },
+  "arguments": {
+    "parsed": {
+      "input": {
+        "text": "Marva"
+      },
+      "list": [
+        "Marva"
+      ]
+    },
+    "status": {
+      "input": {},
+      "list": [
+        null
+      ]
+    },
+    "raw": {
+      "list": [
+        {
+          "rawText": "Marva",
+          "textValue": "Marva",
+          "name": "text"
+        }
+      ],
+      "input": {
+        "text": {
+          "rawText": "Marva",
+          "textValue": "Marva",
+          "name": "text"
+        }
+      }
+    }
+  },
+  "device": {},
+  "id": "ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA",
+  "type": "ACTIVE",
+  "screen": true,
+  "body": "[Excluded]",
+  "version": 2,
+  "action": "searchmeetingroom.searchmeetingroom-custom",
+  "intent": "search meeting room - book",
+  "parameters": {
+    "meeting_room": "Marva"
+  },
+  "contexts": {
+    "_session": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA",
+    "input": {
+      "google_assistant_input_type_touch": {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA/contexts/google_assistant_input_type_touch",
+        "parameters": {
+          "meeting_room.original": "Marva",
+          "meeting_room": "Marva"
+        }
+      },
+      "searchmeetingroom-followup": {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA/contexts/searchmeetingroom-followup",
+        "lifespan": 1,
+        "parameters": {
+          "date": "",
+          "duration": {
+            "amount": 2,
+            "unit": "h"
+          },
+          "time.original": "at 10 o'clock",
+          "person_count.original": "4",
+          "date.original": "",
+          "meeting_room.original": "Marva",
+          "meeting_room": "Marva",
+          "time": "2018-12-10T10:00:00+05:30",
+          "duration.original": "2 hours",
+          "person_count": 4
+        }
+      },
+      "actions_capability_screen_output": {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA/contexts/actions_capability_screen_output",
+        "parameters": {
+          "meeting_room.original": "Marva",
+          "meeting_room": "Marva"
+        }
+      },
+      "actions_capability_audio_output": {
+        "name": "projects/xor-kitvaw/agent/sessions/ABwppHHPVJFBIaWxAg2OkPvdn1lmey5xwgyQe9cVegpS2fL87aZXOXK9XqveMqNnzR0Pj1wiABppCA/contexts/actions_capability_audio_output",
+        "parameters": {
+          "meeting_room.original": "Marva",
+          "meeting_room": "Marva"
+        }
+      },
+2018-12-09T12:54:46.471Z E dialogflowFirebaseFulfillment: TypeError: Cannot read property 'time' of undefined
+    at exports.bookMeetingRoom (/user_code/meeting_room/meetingRoomController.js:27:21)
+    at app.intent (/user_code/index.js:33:5)
+    at Function.<anonymous> (/user_code/node_modules/actions-on-google/dist/service/dialogflow/dialogflow.js:149:23)
+    at next (native)
+    at /user_code/node_modules/actions-on-google/dist/service/dialogflow/dialogflow.js:22:71
+    at __awaiter (/user_code/node_modules/actions-on-google/dist/service/dialogflow/dialogflow.js:18:12)
+    at Function.handler (/user_code/node_modules/actions-on-google/dist/service/dialogflow/dialogflow.js:84:16)
+    at Object.<anonymous> (/user_code/node_modules/actions-on-google/dist/assistant.js:55:32)
+    at next (native)
+    at /user_code/node_modules/actions-on-google/dist/assistant.js:22:71
+2018-12-09T12:54:46.472523986Z D dialogflowFirebaseFulfillment: Function execution took 15 ms, finished with status code: 500
