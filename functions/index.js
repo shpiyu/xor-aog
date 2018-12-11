@@ -49,6 +49,3 @@ app.intent("search meeting room - book", (conv, { meeting_room }) => {
 // Set the DialogflowApp object to handle the HTTPS POST request.
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);
 
-/*********** test ************* */
-
-bookMeetingRoom("Jogiya", "2018-12-09T12:45:02.391Z", 4);
