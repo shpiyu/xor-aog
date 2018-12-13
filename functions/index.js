@@ -6,6 +6,8 @@ const {
   searchMeetingRoom,
   bookMeetingRoom,
 } = require('./meeting_room/meetingRoomController');
+const { nextHoliday, nextLongWeekend} = require('./holidays/holidayController');
+const { fetchTravelRequestsFromXoriant, getUpcomingTravelRequests } = require('./etravel/etravelCoontroller');
 
 app.intent(
   'search meeting room',
@@ -46,6 +48,32 @@ app.intent('search meeting room - book', (conv, {meeting_room}) => {
   }
 });
 
+
+app.intent('next holiday', (conv) => {
+  const holiday = nextHoliday();
+  const response = `The next holiday in Xoriant is on ${holiday.date.toLocaleDateString()} , on the occasion of ${holiday.name}`;
+  conv.close(response);
+});
+
+app.intent('long weekend', conv => {
+  const longWeekend = nextLongWeekend();
+  let response;
+  // if (longWeekend.leave) {
+    response = `If you take a leave on ${longWeekend.leave.toLocaleDateString()} then you
+                can turn your ${longWeekend.holiday} into a ${longWeekend.days} days vacation.`
+  // } else {
+  //   response = `If you are hearing this, probably things are not working or the hackathon has ended`
+  // }
+  conv.close(response);
+})
+
+app.intent('upcoming etravel requests', conv => {
+  fetchTravelRequestsFromXoriant.then(data => {
+    conv.close(JSON.stringify(data));
+  }).catch(err => {
+    conv.close('hooo');
+  })
+})
 // Set the DialogflowApp object to handle the HTTPS POST request.
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);
 

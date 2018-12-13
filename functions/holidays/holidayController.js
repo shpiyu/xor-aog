@@ -4,7 +4,10 @@ exports.nextHoliday = function(date = new Date()) {
     const keys = Object.keys(holidays);
     for(let i=0; i<keys.length; i++) {
         if (new Date(keys[i]) > date) {
-            return holidays[keys[i]];
+            return {
+                "name": holidays[keys[i]],
+                "date": new Date(keys[i])
+            };
         }
     }
 }
