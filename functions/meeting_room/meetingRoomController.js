@@ -1,8 +1,10 @@
 const { rooms } = require("./meetingRoomDb");
+const nodemailer = require("nodemailer");
 
 exports.searchMeetingRoom = function(person_count, date, duration, time) {
   // time in hours only
   console.log(person_count, date, duration, time);
+
   let r = rooms.filter(
     room => checkCapacity(room, person_count) && checkTime(room, time)
   );
@@ -32,4 +34,37 @@ exports.bookMeetingRoom = function(room_name, time, duration) {
   }
 
   return true;
+};
+
+exports.sendEmail = function(meeting_room, start_time, duration) {
+  var transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "xor.aog@gmail.com",
+      pass: "xoraog123"
+    }
+  });
+
+  var mailOptions = {
+    from: "xor.aog@gmail.com",
+    to: "aishwaryayeole@gmail.com",
+    subject: meeting_room + " booked",
+    text:
+      "Hi, \n" +
+      " You have booked " +
+      meeting_room +
+      " meeting room from " +
+      start_time +
+      " for " +
+      duration +
+      " hours. \n\n Regards, \n Xornet Team"
+  };
+
+  transporter.sendMail(mailOptions, function(error, info) {
+    if (error) {
+      console.info(error);
+    } else {
+      console.info("Email sent: " + info.response);
+    }
+  });
 };
