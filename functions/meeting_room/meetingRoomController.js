@@ -55,7 +55,7 @@ exports.sendEmail = function(meeting_room, start_time, duration, toEmail = "aish
   var email_footer =
     " for " + duration + " hours. \n\n Regards, \n Xornet Team";
 
-  var reply = email_header + booked_time_slot + email_footer;
+  var reply = email_header + email_booked_time_slot + email_footer;
 
   var mailOptions = {
     from: "xor.aog@gmail.com",
