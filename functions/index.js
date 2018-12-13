@@ -10,6 +10,18 @@ const { nextHoliday, nextLongWeekend} = require('./holidays/holidayController');
 const { fetchTravelRequestsFromXoriant, getUpcomingTravelRequests } = require('./etravel/etravelCoontroller');
 const { sendEmail } = require("./meeting_room/meetingRoomController");
 
+
+app.intent('Default Welcome Intent', conv => {
+  let response;
+  if (conv.user.storage.userFirstName) {
+    response = `Hi ${conv.user.storage.userFirstName}, what can I do for you?`
+  } else {
+    response = `Hello, what can I do for you?`
+  }
+  conv.ask(response);
+})
+
+
 app.intent(
   "search meeting room",
   (conv, { person_count, date, duration, time }) => {
@@ -40,7 +52,7 @@ app.intent("search meeting room - book", (conv, { meeting_room }) => {
     )
   ) {
     conv.ask(
-      "Great, your meeting room has been booked. bla bla, Would you like to do anything else?"
+      "Great, your meeting room has been booked. Would you like to do anything else?"
     );
     sendEmail(meeting_room, conv.user.storage.time, conv.user.storage.duration);
   } else {
