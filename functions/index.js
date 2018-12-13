@@ -1,36 +1,37 @@
-'use strict';
-const {dialogflow, Suggestions} = require('actions-on-google');
-const functions = require('firebase-functions');
-const app = dialogflow({debug: true});
+"use strict";
+const { dialogflow, Suggestions } = require("actions-on-google");
+const functions = require("firebase-functions");
+const app = dialogflow({ debug: true });
 const {
   searchMeetingRoom,
   bookMeetingRoom,
 } = require('./meeting_room/meetingRoomController');
 const { nextHoliday, nextLongWeekend} = require('./holidays/holidayController');
 const { fetchTravelRequestsFromXoriant, getUpcomingTravelRequests } = require('./etravel/etravelCoontroller');
+const { sendEmail } = require("./meeting_room/meetingRoomController");
 
 app.intent(
-  'search meeting room',
-  (conv, {person_count, date, duration, time}) => {
+  "search meeting room",
+  (conv, { person_count, date, duration, time }) => {
     // Present user with the corresponding basic card and end the conversation.
     const rooms = searchMeetingRoom(person_count, date, duration, time);
     conv.user.storage = {
       pc: person_count,
       date: date,
       duration: duration.amount,
-      time: time,
+      time: time
     };
     if (rooms.length > 0) {
-      conv.add('Please select your meeting room ');
-      const room_names = rooms.map((r) => r.name);
+      conv.add("Please select your meeting room ");
+      const room_names = rooms.map(r => r.name);
       conv.ask(new Suggestions(room_names));
     } else {
-      conv.close('Ghar ja');
+      conv.close("Sorry, meeting room is not available.");
     }
   }
 );
 
-app.intent('search meeting room - book', (conv, {meeting_room}) => {
+app.intent("search meeting room - book", (conv, { meeting_room }) => {
   if (
     bookMeetingRoom(
       meeting_room,
@@ -39,11 +40,12 @@ app.intent('search meeting room - book', (conv, {meeting_room}) => {
     )
   ) {
     conv.ask(
-     'Great, your meeting room has been booked. bla bla, Would you like to do anything else?'
+      "Great, your meeting room has been booked. bla bla, Would you like to do anything else?"
     );
+    sendEmail(meeting_room, conv.user.storage.time, conv.user.storage.duration);
   } else {
     conv.ask(
-     'Sorry, the room could not be booked, would you like to do something else?'
+      "Sorry, the room could not be booked, would you like to do something else?"
     );
   }
 });
@@ -76,4 +78,3 @@ app.intent('upcoming etravel requests', conv => {
 })
 // Set the DialogflowApp object to handle the HTTPS POST request.
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);
-
