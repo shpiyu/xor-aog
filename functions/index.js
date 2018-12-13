@@ -44,7 +44,7 @@ app.intent(
 );
 
 app.intent("search meeting room - book", (conv, { meeting_room }) => {
-  let resposne;
+  let response;
   if (
     bookMeetingRoom(
       meeting_room,
@@ -58,7 +58,7 @@ app.intent("search meeting room - book", (conv, { meeting_room }) => {
     response = "Sorry, the room could not be booked, would you like to do something else?"
   }
 
-  conv.ask(resposne);
+  conv.ask(response);
 });
 
 
