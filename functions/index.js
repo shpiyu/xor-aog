@@ -25,7 +25,7 @@ app.intent('Default Welcome Intent', conv => {
 app.intent("ask xoriant mail id", (conv, {email}) => {
   let response;
   if (email) {
-    conv.user.storage.emailId = email;
+    updateUserInfo(email);
     response = `Thanks, I'll remember your email id. Is there anything else that I can do for you?`;
   } else {
     response = `Sorry, your email id could not be saved. Anything else that I can do for you?`;
@@ -33,7 +33,12 @@ app.intent("ask xoriant mail id", (conv, {email}) => {
 
   conv.ask(response);
 
-})
+});
+
+updateUserInfo = function(email) {
+  conv.user.storage.emailId = email;
+  
+}
 
 app.intent(
   "search meeting room",
@@ -65,14 +70,14 @@ app.intent("search meeting room - book", (conv, { meeting_room }) => {
       conv.data.duration
     )
   ) {
-    response = "Great, your meeting room has been booked."
+    response = "Great, your meeting room has been booked. Would you like me to do something else?"
     if (conv.user.storage.emailId) {
       sendEmail(meeting_room, conv.data.time, conv.data.duration, conv.user.storage.emailId);
     } else {
       response += " If you could tell me your email, I'll send you the confirmation mail.";
     }
   } else {
-    response = "Sorry, the room could not be booked, would you like to do something else?"
+    response = "Sorry, the room could not be booked,  would you like me to do something else?";
   }
 
   conv.ask(response);
