@@ -27,7 +27,7 @@ app.intent(
   (conv, { person_count, date, duration, time }) => {
     // Present user with the corresponding basic card and end the conversation.
     const rooms = searchMeetingRoom(person_count, date, duration, time);
-    conv.user.storage = {
+    conv.data = {
       pc: person_count,
       date: date,
       duration: duration.amount,
@@ -44,22 +44,21 @@ app.intent(
 );
 
 app.intent("search meeting room - book", (conv, { meeting_room }) => {
+  let resposne;
   if (
     bookMeetingRoom(
       meeting_room,
-      conv.user.storage.time,
-      conv.user.storage.duration
+      conv.data.time,
+      conv.data.duration
     )
   ) {
-    conv.ask(
-      "Great, your meeting room has been booked. Would you like to do anything else?"
-    );
-    sendEmail(meeting_room, conv.user.storage.time, conv.user.storage.duration);
+    response = "Great, your meeting room has been booked. Would you like to do anything else?"
+    sendEmail(meeting_room, conv.data.time, conv.data.duration, conv.user.storage.emailId);
   } else {
-    conv.ask(
-      "Sorry, the room could not be booked, would you like to do something else?"
-    );
+    response = "Sorry, the room could not be booked, would you like to do something else?"
   }
+
+  conv.ask(resposne);
 });
 
 

@@ -36,7 +36,7 @@ exports.bookMeetingRoom = function(room_name, time, duration) {
   return true;
 };
 
-exports.sendEmail = function(meeting_room, start_time, duration) {
+exports.sendEmail = function(meeting_room, start_time, duration, toEmail = "aishwaryayeole@gmail.com") {
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -47,7 +47,7 @@ exports.sendEmail = function(meeting_room, start_time, duration) {
 
   var mailOptions = {
     from: "xor.aog@gmail.com",
-    to: "aishwaryayeole@gmail.com",
+    to: to,
     subject: meeting_room + " booked",
     text:
       "Hi, \n" +
