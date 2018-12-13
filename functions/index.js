@@ -4,25 +4,29 @@ const functions = require("firebase-functions");
 const app = dialogflow({ debug: true });
 const {
   searchMeetingRoom,
-  bookMeetingRoom,
-} = require('./meeting_room/meetingRoomController');
-const { nextHoliday, nextLongWeekend} = require('./holidays/holidayController');
-const { fetchTravelRequestsFromXoriant, getUpcomingTravelRequests } = require('./etravel/etravelCoontroller');
+  bookMeetingRoom
+} = require("./meeting_room/meetingRoomController");
+const {
+  nextHoliday,
+  nextLongWeekend
+} = require("./holidays/holidayController");
+const {
+  fetchTravelRequestsFromXoriant,
+  getUpcomingTravelRequests
+} = require("./etravel/etravelCoontroller");
 const { sendEmail } = require("./meeting_room/meetingRoomController");
 
-
-app.intent('Default Welcome Intent', conv => {
+app.intent("Default Welcome Intent", conv => {
   let response;
   if (conv.user.storage.userFirstName) {
-    response = `Hi ${conv.user.storage.userFirstName}, what can I do for you?`
+    response = `Hi ${conv.user.storage.userFirstName}, what can I do for you?`;
   } else {
-    response = `Hello, what can I do for you?`
+    response = `Hello, what can I do for you?`;
   }
   conv.ask(response);
-})
+});
 
-
-app.intent("ask xoriant mail id", (conv, {email}) => {
+app.intent("ask xoriant mail id", (conv, { email }) => {
   let response;
   if (email) {
     conv.user.storage.emailId = email;
@@ -32,8 +36,7 @@ app.intent("ask xoriant mail id", (conv, {email}) => {
   }
 
   conv.ask(response);
-
-})
+});
 
 app.intent(
   "search meeting room",
@@ -58,51 +61,57 @@ app.intent(
 
 app.intent("search meeting room - book", (conv, { meeting_room }) => {
   let response;
-  if (
-    bookMeetingRoom(
-      meeting_room,
-      conv.data.time,
-      conv.data.duration
-    )
-  ) {
-    response = "Great, your meeting room has been booked."
+  if (bookMeetingRoom(meeting_room, conv.data.time, conv.data.duration)) {
+    response = "Great, your meeting room has been booked.";
     if (conv.user.storage.emailId) {
-      sendEmail(meeting_room, conv.data.time, conv.data.duration, conv.user.storage.emailId);
+      sendEmail(
+        meeting_room,
+        conv.data.time,
+        conv.data.duration,
+        conv.user.storage.emailId
+      );
     } else {
-      response += " If you could tell me your email, I'll send you the confirmation mail.";
+      response +=
+        " If you could tell me your email, I'll send you the confirmation mail.";
     }
   } else {
-    response = "Sorry, the room could not be booked, would you like to do something else?"
+    response =
+      "Sorry, the room could not be booked, would you like to do something else?";
   }
 
   conv.ask(response);
 });
 
-
-app.intent('next holiday', (conv) => {
+app.intent("next holiday", conv => {
   const holiday = nextHoliday();
-  const response = `The next holiday in Xoriant is on ${holiday.date.toLocaleDateString()} , on the occasion of ${holiday.name}`;
+  const response = `The next holiday in Xoriant is on ${holiday.date.toLocaleDateString()} , on the occasion of ${
+    holiday.name
+  }`;
   conv.close(response);
 });
 
-app.intent('long weekend', conv => {
+app.intent("long weekend", conv => {
   const longWeekend = nextLongWeekend();
   let response;
   // if (longWeekend.leave) {
-    response = `If you take a leave on ${longWeekend.leave.toLocaleDateString()} then you
-                can turn your ${longWeekend.holiday} into a ${longWeekend.days} days vacation.`
+  response = `If you take a leave on ${longWeekend.leave.toLocaleDateString()} then you
+                can turn your ${longWeekend.holiday} into a ${
+    longWeekend.days
+  } days vacation.`;
   // } else {
   //   response = `If you are hearing this, probably things are not working or the hackathon has ended`
   // }
   conv.close(response);
-})
+});
 
-app.intent('upcoming etravel requests', conv => {
-  fetchTravelRequestsFromXoriant.then(data => {
-    conv.close(JSON.stringify(data));
-  }).catch(err => {
-    conv.close('hooo');
-  })
-})
+app.intent("upcoming etravel requests", conv => {
+  fetchTravelRequestsFromXoriant
+    .then(data => {
+      conv.close(JSON.stringify(data));
+    })
+    .catch(err => {
+      conv.close("hooo");
+    });
+});
 // Set the DialogflowApp object to handle the HTTPS POST request.
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);
