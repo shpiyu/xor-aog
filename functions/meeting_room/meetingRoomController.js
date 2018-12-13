@@ -47,7 +47,7 @@ exports.sendEmail = function(meeting_room, start_time, duration, toEmail = "aish
 
   var mailOptions = {
     from: "xor.aog@gmail.com",
-    to: to,
+    to: toEmail,
     subject: meeting_room + " booked",
     text:
       "Hi, \n" +
