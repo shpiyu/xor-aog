@@ -44,20 +44,24 @@ exports.sendEmail = function(meeting_room, start_time, duration, toEmail = "aish
       pass: "xoraog123"
     }
   });
+  var email_header =
+    "Hi, \n" + " You have booked " + meeting_room + " meeting room from ";
+
+  var email_booked_time_slot =
+    new Date(start_time).getHours() > 12
+      ? new Date(start_time).getHours() - 12 + " PM "
+      : new Date(start_time).getHours() + " AM ";
+
+  var email_footer =
+    " for " + duration + " hours. \n\n Regards, \n Xornet Team";
+
+  var reply = email_header + booked_time_slot + email_footer;
 
   var mailOptions = {
     from: "xor.aog@gmail.com",
     to: toEmail,
     subject: meeting_room + " booked",
-    text:
-      "Hi, \n" +
-      " You have booked " +
-      meeting_room +
-      " meeting room from " +
-      start_time +
-      " for " +
-      duration +
-      " hours. \n\n Regards, \n Xornet Team"
+    text: reply
   };
 
   transporter.sendMail(mailOptions, function(error, info) {
