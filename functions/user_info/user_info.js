@@ -1,5 +1,5 @@
 const rp = require('request-promise');
-fetchTravelRequestsFromXoriant = function() {
+exports.fetchUserDetail = function() {
    
 
     var form = { "emailid" : "Piyush.Ranjan@Xoriant.com" } 
@@ -18,3 +18,4 @@ fetchTravelRequestsFromXoriant = function() {
     return rp(options).then(data => data);
 
 }
+
