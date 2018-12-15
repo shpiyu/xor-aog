@@ -1,32 +1,52 @@
+const {
+    searchMeetingRoom,
+    bookMeetingRoom,
+    CheckRoomAvailabilty
+  } = require("./meeting_room/meetingRoomController");
 
-  const {
-    fetchTravelRequestsFromXoriant,
-    getTravelDetail
-  } = require("./etravel/etravelCoontroller");
+test = function(conv, meeting_room) {
+    let response;
+  let rooms = CheckRoomAvailabilty(
+    conv.data.person_count = 4,
+    conv.data.date,
+    conv.data.duration = 1,
+    conv.data.time = new Date(),
+    meeting_room
+  );
 
-  
+    console.log(rooms);
 
-let test = function(conv) {
-    return new Promise((res, rej) => {
-      fetchTravelRequestsFromXoriant().then( data => JSON.parse(data).data ).then(requests => {
-          
-          return getTravelDetail(requests[0].request.id)
-        }).then (data => {
-            let firstCab = {};
-            firstCab.date = data.cabPickupDateTime;
-            firstCab.from = data.pickupFromCity;
-            firstCab.to = data.goingToCity;
-  
-            let response = `Your upcoming cab request is on ${firstCab.date} 
-            from ${firstCab.from} to ${firstCab.to}`;
-  
-            console.log(response);
-            res();
-        }) 
-        .catch(err => {
-          console.log("hooo ", err);
-        });
-    });
+  if (rooms.value == true) {
+    if (bookMeetingRoom(meeting_room, conv.data.time, conv.data.duration)) {
+      response = "Great, your meeting room has been booked.";
+      if (conv.user.storage.emailId) {
+        sendEmail(
+          meeting_room,
+          conv.data.time,
+          conv.data.duration,
+          conv.user.storage.emailId
+        );
+      } else {
+        response +=
+          " If you could tell me your email, I'll send you the confirmation mail.";
+      }
+    } else {
+      response =
+        "Sorry, the room could not be booked,  would you like me to do something else?";
+    }
+  } else {
+    if (rooms.list.length > 0) {
+      response = meeting_room + " is not available";
+      response += "You can try with following rooms ";
+      const room_names = rooms.list.map(r => r.name);
+      console.log(room_names);
+      return response;
+    } else {
+      console.log("Sorry, meeting room is not available.");
+    }
   }
-  
-  test().then(res => console.log(res));
+
+  return response;
+}
+
+test({ data: {} },"Kafi");

@@ -24,23 +24,31 @@ exports.CheckRoomAvailabilty = function(
     checkCapacity(meeting_room, person_count) &&
     checkTime(meeting_room, time)
   ) {
-    return { list: empty, value: true };
+    return { list: [], value: true };
   } else {
+    console.log(person_count, time);
     let r = rooms.filter(
       room => checkCapacity(room, person_count) && checkTime(room, time)
     );
+    console.log(r);
     return { list: r, value: false };
   }
 };
 
-checkCapacity = function(room, person_count) {
-  return room.capacity >= person_count;
+let checkCapacity = function(room, person_count) {
+  console.log(room , person_count)
+  let v = room.capacity >= person_count;
+  console.log('checkCapac ' + v);
+  return v;
 };
 
-checkTime = function(room, time) {
+let checkTime = function(room, time) {
+  console.log(room, time)
   let hour = new Date(time).getHours();
   let position = hour % 9;
-  return room.time[position] !== 1;
+  let v = room.time[position] !== 1;
+  console.log("check time " + v );
+  return v;
 };
 
 exports.bookMeetingRoom = function(room_name, time, duration) {

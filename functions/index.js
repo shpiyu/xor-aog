@@ -1,5 +1,9 @@
 "use strict";
-const { dialogflow, Suggestions, List } = require("actions-on-google");
+const {
+  dialogflow,
+  Suggestions,
+  List
+} = require("actions-on-google");
 const functions = require("firebase-functions");
 const app = dialogflow({
   debug: true
@@ -17,8 +21,12 @@ const {
   fetchTravelRequestsFromXoriant,
   getUpcomingTravelRequests
 } = require("./etravel/etravelCoontroller");
-const { sendEmail } = require("./meeting_room/meetingRoomController");
-const { fetchUserDetail } = require("./user_info/user_info");
+const {
+  sendEmail
+} = require("./meeting_room/meetingRoomController");
+const {
+  fetchUserDetail
+} = require("./user_info/user_info");
 
 app.intent("Default Welcome Intent", conv => {
   let response;
@@ -30,11 +38,13 @@ app.intent("Default Welcome Intent", conv => {
   conv.ask(response);
 });
 
-let updateUserInfo = function(email) {
+let updateUserInfo = function (email) {
   conv.user.storage.emailId = email;
 };
 
-app.intent("ask xoriant mail id", (conv, { email }) => {
+app.intent("ask xoriant mail id", (conv, {
+  email
+}) => {
   let response;
   if (email) {
     updateUserInfo(conv, email);
@@ -48,10 +58,14 @@ app.intent("ask xoriant mail id", (conv, { email }) => {
 
 app.intent(
   "search meeting room",
-  (
-    conv,
-    { person_count, date, duration, time, meeting_rooms, time_period }
-  ) => {
+  (conv, {
+    person_count,
+    date,
+    duration,
+    time,
+    meeting_rooms,
+    time_period
+  }) => {
     if (meeting_rooms) {
       conv.data.time = time;
       conv.data.duration = duration;
@@ -76,12 +90,14 @@ app.intent(
   }
 );
 
-app.intent("search meeting room - book", (conv, { meeting_room }) => {
+app.intent("search meeting room - book", (conv, {
+  meeting_room
+}) => {
   let response = tryBookingRoom(conv, meeting_room);
   conv.ask(response);
 });
 
-let tryBookingRoom = function(conv, meeting_room) {
+let tryBookingRoom = function (conv, meeting_room) {
   let response;
   let rooms = CheckRoomAvailabilty(
     conv.data.person_count,
@@ -110,14 +126,19 @@ let tryBookingRoom = function(conv, meeting_room) {
     }
   } else {
     if (rooms.list.length > 0) {
-      conv.add(meeting_room + " is not available");
-      conv.add("Please select your meeting room ");
+      response = meeting_room + " is not available";
+      response += "You can try with following rooms ";
       const room_names = rooms.list.map(r => r.name);
-      conv.ask(new Suggestions(room_names));
+      conv.add(new Suggestions(room_names));
+      return response;
     } else {
       conv.close("Sorry, meeting room is not available.");
     }
   }
+
+  return response;
+}
+
 
   app.intent("next holiday", conv => {
     const holiday = nextHoliday();
@@ -174,4 +195,5 @@ let tryBookingRoom = function(conv, meeting_room) {
   });
   // Set the DialogflowApp object to handle the HTTPS POST request.
   exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);
-};
+
+
