@@ -53,28 +53,25 @@ app.intent(
       time: time
     };
     if (meeting_rooms) {
-      // conv.data.time = time;
-      // conv.data.duration = duration;
-      // let response = tryBookingRoom(conv, meeting_rooms);
-      // conv.ask(response);
       if (CheckRoomAvailabilty(person_count, time, meeting_rooms)) {
-        bookMeetingRoom(meeting_rooms, time, duration);
-        conv.ask(`Great! ${meeting_rooms} has been booked for your meeting at ${time}. Would you like me to do anything else for you?`);
+        bookMeetingRoom(meeting_rooms, time, duration.amount);
+        conv.ask(`Great! ${meeting_rooms} has been booked. Is there anything else that I can do?`);
       } else {
-        conv.add(`Oh, it looks like ${meeting_rooms} is already booked by someone at ${time}.`);
-        let availableRooms = searchMeetingRooms(person_count, date, duration, time);
+        let resp = `Oh, it looks like ${meeting_rooms} is already booked by someone at that time.`;
+        let availableRooms = searchMeetingRooms(person_count, date, duration.amount, time);
         if (availableRooms.length > 0) {
-          conv.add(`But I can see that some other rooms are available for ${person_count} people at ${time}`);
-          conv.ask(new Suggestions(availableRooms));
+          resp += `You can book following rooms instead`;
+          const suggs = availableRooms.map(room => room.name);
+          conv.ask(resp, new Suggestions(suggs));
         } else {
           conv.ask(`Sorry, no rooms are available. Can I do something else for you?`);
         }
       }
     } else {
-      const rooms = searchMeetingRoom(person_count, date, duration, time);
+      const rooms = searchMeetingRooms(person_count, date, duration.amount, time);
       
       if (rooms.length > 0) {
-        conv.add("Please select your meeting room ");
+        conv.ask("Please select your meeting room ");
         const room_names = rooms.map(r => r.name);
         conv.ask(new Suggestions(room_names));
       } else {
@@ -88,51 +85,8 @@ app.intent("search meeting room - book", (conv, {
   meeting_room
 }) => {
     bookMeetingRoom(meeting_room, conv.data.time, conv.data.duration);
-    conv.ask(`Great! ${meeting_room} has been booked for your meeting at ${conv.data.time}. Would you like me to do anything else for you?`);
+    conv.ask(`Great! ${meeting_room} has been booked. Would you like me to do anything else for you?`);
 });
-
-let tryBookingRoom = function (conv, meeting_room) {
-  let response;
-  let rooms = CheckRoomAvailabilty(
-    conv.data.person_count,
-    conv.data.date,
-    conv.data.duration,
-    conv.data.time,
-    meeting_room
-  );
-  if (rooms.value == true) {
-    if (bookMeetingRoom(meeting_room, conv.data.time, conv.data.duration)) {
-      response = "Great, your meeting room has been booked.";
-      if (conv.user.storage.emailId) {
-        sendEmail(
-          meeting_room,
-          conv.data.time,
-          conv.data.duration,
-          conv.user.storage.emailId
-        );
-      } else {
-        response +=
-          " If you could tell me your email, I'll send you the confirmation mail.";
-      }
-    } else {
-      response =
-        "Sorry, the room could not be booked,  would you like me to do something else?";
-    }
-  } else {
-    if (rooms.list.length > 0) {
-      response = meeting_room + " is not available";
-      response += "You can try with following rooms ";
-      const room_names = rooms.list.map(r => r.name);
-      conv.add(new Suggestions(room_names));
-      return response;
-    } else {
-      conv.close("Sorry, meeting room is not available.");
-    }
-  }
-
-  return response;
-}
-
 
   app.intent("next holiday", conv => {
     const holiday = nextHoliday();

@@ -9,7 +9,8 @@ exports.searchMeetingRooms = function(person_count, date, duration, time) {
   return r;
 };
 exports.CheckRoomAvailabilty = function(person_count, time, meeting_room) {
-  return checkCapacity(meeting_room, person_count) && checkTime(meeting_room, time);
+    let room = getRoomByName(meeting_room);
+    return checkCapacity(room, person_count) && checkTime(room, time);
 }
 // exports.CheckRoomAvailabilty = function(
 //   person_count,
@@ -31,23 +32,32 @@ exports.CheckRoomAvailabilty = function(person_count, time, meeting_room) {
 //   }
 // };
 
-let checkCapacity = function(room, person_count) {
-  return room.capacity >= person_count;
+let checkCapacity = function(r, person_count) {
+  return r.capacity >= person_count;
 };
 
-let checkTime = function(room, time) {
+let getRoomByName = function(name) {
+  for(let i=0; i<rooms.length; i++) {
+    if ( rooms[i].name == name ) {
+      return rooms[i];
+    }
+  }
+}
+
+let checkTime = function(r, time) {
   let hour = new Date(time).getHours();
   let position = hour % 9;
-  return room.time[position] !== 1;
+  return r.time.indexOf(position) <= -1;
+  
 };
 
 exports.bookMeetingRoom = function(room_name, time, duration) {
   let hour = new Date(time).getHours();
   let position = hour % 9;
+  let room = rooms.filter(r => r.name === room_name);
   while (duration > 0) {
     duration--;
-    let room = rooms.filter(r => r.name === room_name);
-    room[0].time[position] = 1;
+    room[0].time.push(position);
     position++;
   }
 
