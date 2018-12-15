@@ -1,54 +1,44 @@
 const { rooms } = require("./meetingRoomDb");
 const nodemailer = require("nodemailer");
 
-exports.searchMeetingRoom = function(person_count, date, duration, time) {
+exports.searchMeetingRooms = function(person_count, date, duration, time) {
   // time in hours only
-  console.log(person_count, date, duration, time);
-
   let r = rooms.filter(
     room => checkCapacity(room, person_count) && checkTime(room, time)
   );
-
-  console.log(r);
   return r;
 };
-
-exports.CheckRoomAvailabilty = function(
-  person_count,
-  date,
-  duration,
-  time,
-  meeting_room
-) {
-  if (
-    checkCapacity(meeting_room, person_count) &&
-    checkTime(meeting_room, time)
-  ) {
-    return { list: [], value: true };
-  } else {
-    console.log(person_count, time);
-    let r = rooms.filter(
-      room => checkCapacity(room, person_count) && checkTime(room, time)
-    );
-    console.log(r);
-    return { list: r, value: false };
-  }
-};
+exports.CheckRoomAvailabilty = function(person_count, time, meeting_room) {
+  return checkCapacity(meeting_room, person_count) && checkTime(meeting_room, time);
+}
+// exports.CheckRoomAvailabilty = function(
+//   person_count,
+//   time,
+//   meeting_room
+// ) {
+//   if (
+//     checkCapacity(meeting_room, person_count) &&
+//     checkTime(meeting_room, time)
+//   ) {
+//     return { list: [], value: true };
+//   } else {
+//     console.log(person_count, time);
+//     let r = rooms.filter(
+//       room => checkCapacity(room, person_count) && checkTime(room, time)
+//     );
+//     console.log(r);
+//     return { list: r, value: false };
+//   }
+// };
 
 let checkCapacity = function(room, person_count) {
-  console.log(room , person_count)
-  let v = room.capacity >= person_count;
-  console.log('checkCapac ' + v);
-  return v;
+  return room.capacity >= person_count;
 };
 
 let checkTime = function(room, time) {
-  console.log(room, time)
   let hour = new Date(time).getHours();
   let position = hour % 9;
-  let v = room.time[position] !== 1;
-  console.log("check time " + v );
-  return v;
+  return room.time[position] !== 1;
 };
 
 exports.bookMeetingRoom = function(room_name, time, duration) {
