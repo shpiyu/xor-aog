@@ -1,16 +1,13 @@
 "use strict";
-const {
-  dialogflow,
-  Suggestions,
-  List
-} = require("actions-on-google");
+const { dialogflow, Suggestions, List } = require("actions-on-google");
 const functions = require("firebase-functions");
 const app = dialogflow({
   debug: true
 });
 const {
   searchMeetingRoom,
-  bookMeetingRoom
+  bookMeetingRoom,
+  CheckRoomAvailabilty
 } = require("./meeting_room/meetingRoomController");
 const {
   nextHoliday,
@@ -20,12 +17,8 @@ const {
   fetchTravelRequestsFromXoriant,
   getUpcomingTravelRequests
 } = require("./etravel/etravelCoontroller");
-const {
-  sendEmail
-} = require("./meeting_room/meetingRoomController");
-const {
-  fetchUserDetail
-} = require("./user_info/user_info");
+const { sendEmail } = require("./meeting_room/meetingRoomController");
+const { fetchUserDetail } = require("./user_info/user_info");
 
 app.intent("Default Welcome Intent", conv => {
   let response;
@@ -37,26 +30,11 @@ app.intent("Default Welcome Intent", conv => {
   conv.ask(response);
 });
 
-const CAB_BOOOKINGS = {
-  title: 'Your Requests',
-  items: {
-    // "SELECTION_KEY_ONE": {
-      
-    //   title: 'Title of First List Item',
-    //   description: 'This is a description of a list item.',
-    //   // image: new Image({
-    //   //   url: IMG_URL_AOG,
-    //   //   alt: 'Image alternate text',
-    //   // }),
-    // },
-    
-  }
+let updateUserInfo = function(email) {
+  conv.user.storage.emailId = email;
 };
 
-
-app.intent("ask xoriant mail id", (conv, {
-  email
-}) => {
+app.intent("ask xoriant mail id", (conv, { email }) => {
   let response;
   if (email) {
     updateUserInfo(conv, email);
@@ -66,27 +44,14 @@ app.intent("ask xoriant mail id", (conv, {
   }
 
   conv.ask(response);
-
 });
-
-let updateUserInfo = function (conv, email) {
-  conv.user.storage.emailId = email;
-  fetchUserDetail().then(data => {
-    conv.user.storage.userFirstName = JSON.parse(data).data.firstname;
-  });
-}
 
 app.intent(
   "search meeting room",
-  (conv, {
-    person_count,
-    date,
-    duration,
-    time,
-    meeting_rooms,
-    time_period
-  }) => {
-
+  (
+    conv,
+    { person_count, date, duration, time, meeting_rooms, time_period }
+  ) => {
     if (meeting_rooms) {
       conv.data.time = time;
       conv.data.duration = duration;
@@ -111,94 +76,102 @@ app.intent(
   }
 );
 
-app.intent("search meeting room - book", (conv, {
-  meeting_room
-}) => {
+app.intent("search meeting room - book", (conv, { meeting_room }) => {
   let response = tryBookingRoom(conv, meeting_room);
   conv.ask(response);
 });
 
-let tryBookingRoom = function (conv, meeting_room) {
+let tryBookingRoom = function(conv, meeting_room) {
   let response;
-  if (
-    bookMeetingRoom(
-      meeting_room,
-      conv.data.time,
-      conv.data.duration
-    )
-  ) {
-    response = "Great, your meeting room has been booked. Would you like me to do anything else";
-    if (conv.user.storage.emailId) {
-      sendEmail(
-        meeting_room,
-        conv.data.time,
-        conv.data.duration,
-        conv.user.storage.emailId
-      );
+  let rooms = CheckRoomAvailabilty(
+    conv.data.person_count,
+    conv.data.date,
+    conv.data.duration,
+    conv.data.time,
+    meeting_room
+  );
+  if (rooms.value == true) {
+    if (bookMeetingRoom(meeting_room, conv.data.time, conv.data.duration)) {
+      response = "Great, your meeting room has been booked.";
+      if (conv.user.storage.emailId) {
+        sendEmail(
+          meeting_room,
+          conv.data.time,
+          conv.data.duration,
+          conv.user.storage.emailId
+        );
+      } else {
+        response +=
+          " If you could tell me your email, I'll send you the confirmation mail.";
+      }
     } else {
-      response +=
-        " If you could tell me your email, I'll send you the confirmation mail.";
+      response =
+        "Sorry, the room could not be booked,  would you like me to do something else?";
     }
   } else {
-    response = "Sorry, the room could not be booked,  would you like me to do something else?";
+    if (rooms.list.length > 0) {
+      conv.add(meeting_room + " is not available");
+      conv.add("Please select your meeting room ");
+      const room_names = rooms.list.map(r => r.name);
+      conv.ask(new Suggestions(room_names));
+    } else {
+      conv.close("Sorry, meeting room is not available.");
+    }
   }
-  return response;
-}
 
-app.intent("next holiday", conv => {
-  const holiday = nextHoliday();
-  const response = `The next holiday in Xoriant is on ${holiday.date.toLocaleDateString()} , on the occasion of ${
-    holiday.name
-  }`;
-  conv.close(response);
-});
+  app.intent("next holiday", conv => {
+    const holiday = nextHoliday();
+    const response = `The next holiday in Xoriant is on ${holiday.date.toLocaleDateString()} , on the occasion of ${
+      holiday.name
+    }`;
+    conv.close(response);
+  });
 
-app.intent("long weekend", conv => {
-  const longWeekend = nextLongWeekend();
-  let response;
-  // if (longWeekend.leave) {
-  response = `If you take a leave on ${longWeekend.leave.toLocaleDateString()} then you
+  app.intent("long weekend", conv => {
+    const longWeekend = nextLongWeekend();
+    let response;
+    // if (longWeekend.leave) {
+    response = `If you take a leave on ${longWeekend.leave.toLocaleDateString()} then you
                 can turn your ${longWeekend.holiday} into a ${
-    longWeekend.days
-  } days vacation.`;
-  // } else {
-  //   response = `If you are hearing this, probably things are not working or the hackathon has ended`
-  // }
-  conv.close(response);
-});
+      longWeekend.days
+    } days vacation.`;
+    // } else {
+    //   response = `If you are hearing this, probably things are not working or the hackathon has ended`
+    // }
+    conv.close(response);
+  });
 
+  app.intent("upcoming etravel requests", conv => {
+    //  conv.ask('Here are your scheduled bookings');
 
+    return new Promise((res, rej) => {
+      fetchTravelRequestsFromXoriant()
+        .then(data => {
+          let requests = JSON.parse(data).data;
 
+          requests.forEach(req => {
+            let key = new Date(
+              req.request.earliestTravelDate
+            ).toLocaleDateString();
+            let val = {};
+            val.title = key;
+            val.description = req.request.purpose_value;
 
-app.intent("upcoming etravel requests", conv => {
-  //  conv.ask('Here are your scheduled bookings');
-  
-  return new Promise((res, rej) => {
-    fetchTravelRequestsFromXoriant().then(data => {
-        let requests = JSON.parse(data).data;
-        
-        
-        requests.forEach(req => {
-          let key = new Date(req.request.earliestTravelDate).toLocaleDateString();
-          let val = {};
-          val.title = key;
-          val.description = req.request.purpose_value;
-
-          CAB_BOOOKINGS[key] = val;
-
-        })
-        // conv.ask(new SimpleResponse({
-        //   speech: 'Here are your scheduled bookings',
-        //   text: 'Here are your scheduled bookings',
-        // }),new List(CAB_BOOOKINGS));
-        conv.ask(`Your upcoming cab request is  
+            CAB_BOOOKINGS[key] = val;
+          });
+          // conv.ask(new SimpleResponse({
+          //   speech: 'Here are your scheduled bookings',
+          //   text: 'Here are your scheduled bookings',
+          // }),new List(CAB_BOOOKINGS));
+          conv.ask(`Your upcoming cab request is  
                   for ${requests[0].request.purpose_value}`);
-        res();
-      })
-      .catch(err => {
-        conv.close("hooo");
-      });
-  })
-});
-// Set the DialogflowApp object to handle the HTTPS POST request.
-exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);
+          res();
+        })
+        .catch(err => {
+          conv.close("hooo");
+        });
+    });
+  });
+  // Set the DialogflowApp object to handle the HTTPS POST request.
+  exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);
+};

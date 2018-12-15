@@ -13,6 +13,26 @@ exports.searchMeetingRoom = function(person_count, date, duration, time) {
   return r;
 };
 
+exports.CheckRoomAvailabilty = function(
+  person_count,
+  date,
+  duration,
+  time,
+  meeting_room
+) {
+  if (
+    checkCapacity(meeting_room, person_count) &&
+    checkTime(meeting_room, time)
+  ) {
+    return { list: empty, value: true };
+  } else {
+    let r = rooms.filter(
+      room => checkCapacity(room, person_count) && checkTime(room, time)
+    );
+    return { list: r, value: false };
+  }
+};
+
 checkCapacity = function(room, person_count) {
   return room.capacity >= person_count;
 };
@@ -36,7 +56,12 @@ exports.bookMeetingRoom = function(room_name, time, duration) {
   return true;
 };
 
-exports.sendEmail = function(meeting_room, start_time, duration, toEmail = "aishwaryayeole@gmail.com") {
+exports.sendEmail = function(
+  meeting_room,
+  start_time,
+  duration,
+  toEmail = "aishwaryayeole@gmail.com"
+) {
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
