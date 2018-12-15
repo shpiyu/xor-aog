@@ -1,10 +1,5 @@
 const rp = require('request-promise');
-
-exports.getUpcomingTravelRequests = function() {
-    fetchTravelRequestsFromXoriant((data) => data);
-}
-
-
+  
 exports.fetchTravelRequestsFromXoriant = function() {
    
 
@@ -21,6 +16,8 @@ exports.fetchTravelRequestsFromXoriant = function() {
         method: 'POST'
     }
 
-    return rp(options);
+    return rp(options).then(data => data);
 
 }
+
+// exports.fetchTravelRequestsFromXoriant().then(data => console.log(JSON.parse(data).data[0].request.id));
