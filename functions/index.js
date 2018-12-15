@@ -18,7 +18,7 @@ const {
 } = require("./holidays/holidayController");
 const {
   fetchTravelRequestsFromXoriant,
-  getUpcomingTravelRequests
+  getTravelDetail
 } = require("./etravel/etravelCoontroller");
 const {
   sendEmail
@@ -150,8 +150,17 @@ app.intent("next holiday", conv => {
   const response = `The next holiday in Xoriant is on ${holiday.date.toLocaleDateString()} , on the occasion of ${
     holiday.name
   }`;
-  conv.close(response);
+  conv.ask(response);
 });
+
+app.intent("next next holiday", conv => {
+  const h = nextHoliday();
+  const holiday = nextHoliday(h.date);
+  const response = `The one after that is on ${holiday.date.toLocaleDateString()} , on the occasion of ${
+    holiday.name
+  }`;
+  conv.ask(response);
+})
 
 app.intent("long weekend", conv => {
   const longWeekend = nextLongWeekend();
@@ -164,41 +173,39 @@ app.intent("long weekend", conv => {
   // } else {
   //   response = `If you are hearing this, probably things are not working or the hackathon has ended`
   // }
-  conv.close(response);
+  conv.ask(response);
 });
 
 
 
 
 app.intent("upcoming etravel requests", conv => {
-  //  conv.ask('Here are your scheduled bookings');
-  
+  // conv.ask('Here are your scheduled bookings');
   return new Promise((res, rej) => {
-    fetchTravelRequestsFromXoriant().then(data => {
-        let requests = JSON.parse(data).data;
-        
-        
-        requests.forEach(req => {
-          let key = new Date(req.request.earliestTravelDate).toLocaleDateString();
-          let val = {};
-          val.title = key;
-          val.description = req.request.purpose_value;
+    console.info('here');
+    fetchTravelRequestsFromXoriant().then( data => JSON.parse(data).data ).then(requests => {
+      console.info(requests);
+        return getTravelDetail(requests[0].request.id)
+      }).then (data => {
+          let firstCab = {};
+          firstCab.date = data.cabPickupDateTime;
+          firstCab.from = data.pickupFromCity;
+          firstCab.to = data.goingToCity;
+          console.info(firstCab);
+          let response = `Your upcoming cab request is on ${firstCab.date} from ${firstCab.from} to ${firstCab.to}`;
 
-          CAB_BOOOKINGS[key] = val;
-
-        })
-        // conv.ask(new SimpleResponse({
-        //   speech: 'Here are your scheduled bookings',
-        //   text: 'Here are your scheduled bookings',
-        // }),new List(CAB_BOOOKINGS));
-        conv.ask(`Your upcoming cab request is  
-                  for ${requests[0].request.purpose_value}`);
-        res();
-      })
+          conv.ask(response);
+          res();
+      }) 
       .catch(err => {
-        conv.close("hooo");
+        console.info("hooo ", err);
+        rej();
       });
-  })
+  });
+  
 });
+
+
+
 // Set the DialogflowApp object to handle the HTTPS POST request.
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);
